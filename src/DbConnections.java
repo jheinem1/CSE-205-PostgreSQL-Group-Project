@@ -14,11 +14,11 @@ public class DbConnections {
     {
         connection = null;
         try{
-            Class.forName("org.postgresql.Driver");
+        	Class.forName("org.postgresql.Driver");
             connection = DriverManager.getConnection(
                     "jdbc:postgresql://localhost:5432/testdb",
                     "postgres",
-                    "Password"
+                    "cowocow0"
             );
             System.out.println("Opened Database Successfully!");
         }catch(ClassNotFoundException e) {
@@ -139,13 +139,42 @@ public class DbConnections {
         }
     }
     
+    public static void selectAllCommandForTest(Connection connection, String table)
+    {
+
+        Statement statement = null;
+        try{
+            statement = connection.createStatement();
+            String sqlCommand = "Select * FROM " + table + ";";
+            
+            ResultSet resultSet = statement.executeQuery(sqlCommand);
+            while(resultSet.next()){
+            	 int id = resultSet.getInt("id");
+              	String name = resultSet.getString("name");
+               
+                
+                System.out.println("Name: " + name + " ID: " + id);
+            }
+            resultSet.close();
+            statement.close();
+            System.out.println("Data Selected...");
+        } catch (SQLException e) {
+            e.printStackTrace();
+            System.exit(0);
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.err.println("Catch all Exception occurred: "+e.getClass().getName()+": "+e.getMessage());
+            System.exit(0);
+        }
+    }
+    
     public static void selectCommand(Connection connection)
     {
 
         Statement statement = null;
         try{
             statement = connection.createStatement();
-            String sqlCommand = "Select * FROM company;";
+            String sqlCommand = "Select * FROM test3;";
             
             ResultSet resultSet = statement.executeQuery(sqlCommand);
             while(resultSet.next()){
@@ -156,6 +185,66 @@ public class DbConnections {
                 float salary = resultSet.getFloat("salary");
 
                 System.out.println(String.format("ID = %d\n NAME = %s\n AGE = %d\n ADDRESS = %s\n SALARY = %.2f \n",id,name,age,address,salary));
+            }
+            resultSet.close();
+            statement.close();
+            System.out.println("Data Selected...");
+        } catch (SQLException e) {
+            e.printStackTrace();
+            System.exit(0);
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.err.println("Catch all Exception occurred: "+e.getClass().getName()+": "+e.getMessage());
+            System.exit(0);
+        }
+    }
+    
+    private static void selectCommandFromDelete(Connection connection, String table)
+    {
+
+        Statement statement = null;
+        try{
+            statement = connection.createStatement();
+            String sqlCommand = "Select * FROM " + table + ";";
+            
+            ResultSet resultSet = statement.executeQuery(sqlCommand);
+            while(resultSet.next()){
+                int id = resultSet.getInt("id");
+                String name = resultSet.getString("name");
+                int age = resultSet.getInt("age");
+                String address = resultSet.getString("address");
+                float salary = resultSet.getFloat("salary");
+
+                System.out.println(String.format("ID = %d\n NAME = %s\n AGE = %d\n ADDRESS = %s\n SALARY = %.2f \n",id,name,age,address,salary));
+            }
+            resultSet.close();
+            statement.close();
+            System.out.println("Data Selected...");
+        } catch (SQLException e) {
+            e.printStackTrace();
+            System.exit(0);
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.err.println("Catch all Exception occurred: "+e.getClass().getName()+": "+e.getMessage());
+            System.exit(0);
+        }
+    }
+    
+    public static void selectTestsCommand(Connection connection, String table)
+    {
+
+        Statement statement = null;
+        try{
+            statement = connection.createStatement();
+            String sqlCommand = "Select * FROM " + table + ";";
+            
+            ResultSet resultSet = statement.executeQuery(sqlCommand);
+            while(resultSet.next()){
+            	
+            	String name = resultSet.getString("name");
+                int id = resultSet.getInt("id");
+                
+                System.out.println("Name: " + name + " ID: " + id);
             }
             resultSet.close();
             statement.close();
@@ -183,7 +272,7 @@ public class DbConnections {
             System.out.println("Data Updated...");
 
 
-            selectCommand(connection);
+           // selectCommand(connection);
         } catch (SQLException e) {
             e.printStackTrace();
             System.exit(0);
@@ -200,14 +289,15 @@ public class DbConnections {
         try{
             connection.setAutoCommit(false);
             statement = connection.createStatement();
-            // String sqlCommand = "DELETE FROM table WHERE condition;";
+            // String sqlCommand = "DELETE FROM table WHERE condition;"
+            System.out.println(sqlCommand + "!!!!");
             statement.executeUpdate(sqlCommand);
             connection.commit();
             statement.close();
             System.out.println("Data Deleted...");
 
 
-            selectCommand(connection);
+            //selectCommandFromDelete(connection, table);
         } catch (SQLException e) {
             e.printStackTrace();
             System.exit(0);
@@ -219,7 +309,7 @@ public class DbConnections {
     }
     
     public static String generateDeleteCommand(String from, String where) {
-    	return "DELETE FROM " + from + "WHERE" + where + ";";
+    	return "DELETE FROM " + from + " WHERE " + where + ";";
     }
     
     
@@ -234,22 +324,27 @@ public class DbConnections {
     
     //overloaded
     public static String generateUpdateCommand(String table, String toSet, String value) {
-    	return "UPDATE" + table + "SET" + toSet + "=" + value + ";";
+    	return "UPDATE " + table + " SET " + toSet + " = " + value + ";";
     }
  
     //overloaded
     public static String generateUpdateCommand(String table, String toSet, String value, String condition) {
-    	return "UPDATE" + table + "SET" + toSet + "=" + value + "WHERE" + condition + ";";
+    	return " UPDATE " + table + " SET " + toSet + " = " + value + " WHERE " + condition + ";";
     }
     
-    public static String generateInsertCommand(LinkedHashMap<String, String> changes) {
+    public static String generateInsertCommand(LinkedHashMap<String, String> changes, String table) {
     	String[] dict = depackLinkedHash(changes);
     	String keys = dict[0];
     	String values = dict[1];
     	
-    	String sqlCommand = "INSERT INTO company(" +  keys  + ")";
+    	String sqlCommand = "INSERT INTO " + table + " (" +  keys  + ") ";
         sqlCommand += "VALUES(" + values + ");";
+        //System.out.println(sqlCommand + "!!!!");
         return sqlCommand;
+    }
+    
+    public Connection getConnection() {
+    	return connection;
     }
     
     public static String[] depackLinkedHash(LinkedHashMap<String, String> hash) {
@@ -260,8 +355,11 @@ public class DbConnections {
     	String values = "";
     	for (Map.Entry<String, String> entries : hash.entrySet()) {
     		keys += entries.getKey() + ", ";
-    		values += entries.getValue() + ", ";
+    		values += "\'" + entries.getValue() + "\', ";
     	}
+    	
+    	keys = keys.substring(0, keys.length() - 2); 
+    	values = values.substring(0, values.length() - 2); 
     	
     	dictionary[0] = keys;
     	dictionary[1] = values;
