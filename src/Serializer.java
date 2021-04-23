@@ -28,7 +28,11 @@ public class Serializer {
                 person.getPosition());
     }
 
-    public static Person deserialize(String json) {
+    public static Person[] deserializeArrayObject(String json) {
+        throw new UnsupportedOperationException("Method not implemented yet");
+    }
+
+    public static Person deserializePersonObject(String json) {
         throw new UnsupportedOperationException("Method not implemented yet");
     }
 }
