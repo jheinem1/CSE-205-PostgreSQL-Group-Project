@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.regex.Pattern;
 
@@ -15,6 +16,12 @@ public class Serializer {
         System.out.println(item);
         System.out.println(itemSerialized);
         System.out.println(deserializeItemObject(itemSerialized));
+
+        var items = new Item[] {item, new Item("Eggs", 5.00, 8)};
+        var itemsSerialized = serialize(items);
+        System.out.println(Arrays.toString(items));
+        System.out.println(itemsSerialized);
+        System.out.println(Arrays.toString(deserializeItemArrayObject(itemsSerialized)));
     }
 
     /**
@@ -68,50 +75,36 @@ public class Serializer {
      * Deserializes a JSON array of Person objects
      */
     public static Person[] deserializePersonArrayObject(String json) {
-        var arrayPattern = Pattern.compile("^[.*]$");
-        var arrayMatcher = arrayPattern.matcher(json);
-        if (arrayMatcher.matches()) {
-            var objectPattern = Pattern.compile("{.*}");
-            var objectMatcher = objectPattern.matcher(json);
-            var personArray = new ArrayList<Person>();
-            while (objectMatcher.find())
-                personArray.add(deserializePersonObject(objectMatcher.group()));
-            return (Person[]) personArray.toArray();
-        } else {
-            throw new UnsupportedOperationException("Invalid JSON");
-        }
+        var objectPattern = Pattern.compile("\\{[^{}]*}");
+        var objectMatcher = objectPattern.matcher(json);
+        var personArray = new ArrayList<Person>();
+        while (objectMatcher.find())
+            personArray.add(deserializePersonObject(objectMatcher.group()));
+        return personArray.toArray(new Person[0]);
     }
 
     /**
      * Deserializes a JSON array of Item objects
      */
     public static Item[] deserializeItemArrayObject(String json) {
-        var arrayPattern = Pattern.compile("^[.*]$");
-        var arrayMatcher = arrayPattern.matcher(json);
-        if (arrayMatcher.matches()) {
-            var objectPattern = Pattern.compile("{.*}");
-            var objectMatcher = objectPattern.matcher(json);
-            var ItemArray = new ArrayList<Item>();
-            while (objectMatcher.find())
-                ItemArray.add(deserializeItemObject(objectMatcher.group()));
-            return (Item[]) ItemArray.toArray();
-        } else {
-            throw new UnsupportedOperationException("Invalid JSON");
-        }
+        var objectPattern = Pattern.compile("\\{[^{}]*}");
+        var objectMatcher = objectPattern.matcher(json);
+        var itemArray = new ArrayList<Item>();
+        while (objectMatcher.find())
+            itemArray.add(deserializeItemObject(objectMatcher.group()));
+        return itemArray.toArray(new Item[0]);
     }
 
     /**
      * Deserializes a Person object from a valid JSON object
      */
     public static Person deserializePersonObject(String json) {
-        var propertyPattern = Pattern.compile("\"([^\"\\\\]+)\"\\s*=\\s*\"([^\"\\\\]*)\"");
+        var propertyPattern = Pattern.compile("\"([^\"\\\\]+)\"\\s*:\\s*\"([^\"\\\\]*)\"");
         var propertyMatcher = propertyPattern.matcher(json);
         var propertyTable = new HashMap<String, String>();
-        while (propertyMatcher.group() != null) {
+        while (propertyMatcher.find())
             propertyTable.put(propertyMatcher.group(1), propertyMatcher.group(2));
-            propertyMatcher.find();
-        }
-        if (propertyTable.get("type") != null && propertyTable.get("type") == "Person")
+        if (propertyTable.get("type") != null && propertyTable.get("type").equals("Person"))
             return new Person(propertyTable.get("firstName"), propertyTable.get("lastName"),
                     propertyTable.get("address"), propertyTable.get("emailAddress"), propertyTable.get("position"),
                     propertyTable.get("username"), propertyTable.get("password"));
@@ -123,14 +116,9 @@ public class Serializer {
      * Deserializes an Item object from a valid JSON object
      */
     public static Item deserializeItemObject(String json) {
-//        var props = json.split(",");
-        var propertyPattern = Pattern.compile("\".*([^\"\\\\]+)\"\\s*=\\s*\"([^\"\\\\]*)\".*");
+        var propertyPattern = Pattern.compile("\"([^\"\\\\]+)\"\\s*:\\s*\"([^\"\\\\]*)\"");
         var propertyMatcher = propertyPattern.matcher(json);
         var propertyTable = new HashMap<String, String>();
-//        for (var prop : props) {
-//            var propertyMatcher = propertyPattern.matcher(prop);
-//            propertyTable.put(propertyMatcher.group(1), propertyMatcher.group(2));
-//        }
          while (propertyMatcher.find())
              propertyTable.put(propertyMatcher.group(1), propertyMatcher.group(2));
         if (propertyTable.get("type") != null && propertyTable.get("type").equals("Item"))
