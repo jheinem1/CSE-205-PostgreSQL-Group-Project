@@ -3,7 +3,7 @@ import java.util.LinkedHashMap;
 public class Employee extends Person {
 
 	public Employee(String fName, String lName, String address, String emailAddress, String username,
-			String password) {//Needed infor for Employee
+			String password) {//Needed info for Employee
 		super(fName, lName, address, emailAddress, "Employee", username, password);
 	}
 	
