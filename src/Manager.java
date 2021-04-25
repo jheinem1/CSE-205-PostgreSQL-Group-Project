@@ -64,6 +64,7 @@ public class Manager extends Person {
 
 	//For bellow you should import Inventory.java and use some of its functions to help in creating these
 	
+	
 	//makeitem, should use createNewItem from Inventory.java
 	//additem, should use increase quantity from Inventory.java
 	//removeitem, hopefully a removeItem will be added to Inventory.java for you to implement
