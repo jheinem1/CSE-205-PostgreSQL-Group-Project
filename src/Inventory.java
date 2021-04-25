@@ -43,7 +43,7 @@ public class Inventory {
 		
 		return;
 	}
-	
+
 	public void createNewItem(String name, int price, int quantity) {
 		
 		items.add(new Item(name, price, quantity));
