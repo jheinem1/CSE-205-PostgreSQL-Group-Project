@@ -67,20 +67,36 @@ public class Serializer {
     /**
      * Deserializes a JSON array of Person objects
      */
-    public static Person[] deserializeArrayObject(String json) throws InvalidJsonException {
+    public static Person[] deserializePersonArrayObject(String json) {
         var arrayPattern = Pattern.compile("^[.*]$");
         var arrayMatcher = arrayPattern.matcher(json);
         if (arrayMatcher.matches()) {
             var objectPattern = Pattern.compile("{.*}");
             var objectMatcher = objectPattern.matcher(json);
             var personArray = new ArrayList<Person>();
-            while (objectMatcher.group() != null) {
+            while (objectMatcher.find())
                 personArray.add(deserializePersonObject(objectMatcher.group()));
-                objectMatcher.find();
-            }
             return (Person[]) personArray.toArray();
         } else {
-            throw new InvalidJsonException();
+            throw new UnsupportedOperationException("Invalid JSON");
+        }
+    }
+
+    /**
+     * Deserializes a JSON array of Item objects
+     */
+    public static Item[] deserializeItemArrayObject(String json) {
+        var arrayPattern = Pattern.compile("^[.*]$");
+        var arrayMatcher = arrayPattern.matcher(json);
+        if (arrayMatcher.matches()) {
+            var objectPattern = Pattern.compile("{.*}");
+            var objectMatcher = objectPattern.matcher(json);
+            var ItemArray = new ArrayList<Item>();
+            while (objectMatcher.find())
+                ItemArray.add(deserializeItemObject(objectMatcher.group()));
+            return (Item[]) ItemArray.toArray();
+        } else {
+            throw new UnsupportedOperationException("Invalid JSON");
         }
     }
 
@@ -88,7 +104,7 @@ public class Serializer {
      * Deserializes a Person object from a valid JSON object
      */
     public static Person deserializePersonObject(String json) {
-        var propertyPattern = Pattern.compile("\"([^\"\\\\]+)\"\s*=\s*\"([^\"\\\\]*)\"");
+        var propertyPattern = Pattern.compile("\"([^\"\\\\]+)\"\\s*=\\s*\"([^\"\\\\]*)\"");
         var propertyMatcher = propertyPattern.matcher(json);
         var propertyTable = new HashMap<String, String>();
         while (propertyMatcher.group() != null) {
@@ -123,7 +139,4 @@ public class Serializer {
         else
             throw new UnsupportedOperationException("Invalid/Missing type field");
     }
-}
-
-class InvalidJsonException extends Exception {
 }
