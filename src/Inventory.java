@@ -81,5 +81,15 @@ public class Inventory {
 		}
 		return null;
 	}
+	public void removeItemAtIndex(int index) {
+		 
+		items.remove(index);
+	}
+	
+	public Item changePrice(int index, Item price) {
+		
+		Item newPrice = items.set(index, price);
+		return newPrice; 
+	}
 	
 }
