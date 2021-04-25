@@ -13,14 +13,14 @@ public class Serializer {
     public static void main(String[] args) {
         var item = new Item("Milk", 1.50, 4);
         var itemSerialized = serialize(item);
-        System.out.println(item);
-        System.out.println(itemSerialized);
-        System.out.println(deserializeItemObject(itemSerialized));
+        System.out.println(item); // Milk:	$1.50, 4
+        System.out.println(itemSerialized); // {"type":"Item","name":"Milk","price":"1.50","amount":"4"}
+        System.out.println(deserializeItemObject(itemSerialized)); // Milk:	$1.50, 4
 
         var items = new Item[] {item, new Item("Eggs", 5.00, 8)};
         var itemsSerialized = serialize(items);
-        System.out.println(Arrays.toString(items));
-        System.out.println(itemsSerialized);
+        System.out.println(Arrays.toString(items)); // [Milk:	$1.50, 4, Eggs:	$5.00, 8]
+        System.out.println(itemsSerialized); // [{"type":"Item","name":"Milk","price":"1.50","amount":"4"}, {"type":"Item","name":"Eggs","price":"5.00","amount":"8"}, ]
         System.out.println(Arrays.toString(deserializeItemArrayObject(itemsSerialized)));
     }
 
@@ -33,7 +33,7 @@ public class Serializer {
         var out = new StringBuilder("[");
         for (var v : array)
             out.append(serialize(v)).append(", ");
-        return out.append("]").toString();
+        return out.deleteCharAt(out.length() - 1).append("]").toString();
     }
 
     /**
@@ -44,8 +44,8 @@ public class Serializer {
     public static String serialize(Item[] array) {
         var out = new StringBuilder("[");
         for (var v : array)
-            out.append(serialize(v)).append(", ");
-        return out.append("]").toString();
+            out.append(serialize(v)).append(",");
+        return out.deleteCharAt(out.length() - 1).append("]").toString();
     }
 
     /**
