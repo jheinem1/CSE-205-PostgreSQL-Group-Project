@@ -1,4 +1,4 @@
-import javax.swing.JFrame;
+import javax.swing.*;
 
 import gui.LoginFirstScreen;
 
@@ -12,5 +12,6 @@ public class App {
         
         baseFrame.add(loginFirstScreen);
         baseFrame.setVisible(true);
+        baseFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
     }
 }
