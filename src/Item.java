@@ -1,4 +1,3 @@
-package Project;
 import java.text.NumberFormat;
 
 public class Item
