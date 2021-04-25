@@ -20,8 +20,8 @@ public class Serializer {
         var items = new Item[] {item, new Item("Eggs", 5.00, 8)};
         var itemsSerialized = serialize(items);
         System.out.println(Arrays.toString(items)); // [Milk:	$1.50, 4, Eggs:	$5.00, 8]
-        System.out.println(itemsSerialized); // [{"type":"Item","name":"Milk","price":"1.50","amount":"4"}, {"type":"Item","name":"Eggs","price":"5.00","amount":"8"}, ]
-        System.out.println(Arrays.toString(deserializeItemArrayObject(itemsSerialized)));
+        System.out.println(itemsSerialized); // [{"type":"Item","name":"Milk","price":"1.50","amount":"4"},{"type":"Item","name":"Eggs","price":"5.00","amount":"8"}]
+        System.out.println(Arrays.toString(deserializeItemArrayObject(itemsSerialized))); // [Milk:	$1.50, 4, Eggs:	$5.00, 8]
     }
 
     /**

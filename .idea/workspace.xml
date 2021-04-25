@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e7d3211a-169f-410d-8b55-b0afda4c4f35" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Serializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Serializer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -75,7 +74,7 @@
       <updated>1618787432259</updated>
       <workItem from="1618787439252" duration="487000" />
       <workItem from="1619337088351" duration="1078000" />
-      <workItem from="1619374360858" duration="3557000" />
+      <workItem from="1619374360858" duration="3592000" />
     </task>
     <task id="LOCAL-00001" summary="Made some changes so the project could build">
       <created>1619337685056</created>
@@ -126,7 +125,14 @@
       <option name="project" value="LOCAL" />
       <updated>1619378293547</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Fixed comma issues">
+      <created>1619378446803</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1619378446803</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -152,6 +158,7 @@
     <MESSAGE value="Removed duplicate files" />
     <MESSAGE value="Reverted to original serialization method" />
     <MESSAGE value="Fixed issues with array serialization/deserialization" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed issues with array serialization/deserialization" />
+    <MESSAGE value="Fixed comma issues" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed comma issues" />
   </component>
 </project>
