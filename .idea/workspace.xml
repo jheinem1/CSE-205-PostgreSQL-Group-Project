@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="e7d3211a-169f-410d-8b55-b0afda4c4f35" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Serializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Serializer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,7 +30,7 @@
       <recent name="C:\Users\jhein\Documents\Github\CSE-205-PostgreSQL-Group-Project\src" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Serializer">
     <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="App" />
       <module name="CSE-205-PostgreSQL-Group-Project" />
@@ -38,19 +38,29 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+    <configuration name="Serializer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Serializer" />
+      <module name="CSE-205-PostgreSQL-Group-Project" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Serializer" />
         <item itemvalue="Application.App" />
       </list>
     </recent_temporary>
@@ -64,7 +74,8 @@
       <option name="presentableId" value="Default" />
       <updated>1618787432259</updated>
       <workItem from="1618787439252" duration="487000" />
-      <workItem from="1619337088351" duration="996000" />
+      <workItem from="1619337088351" duration="1078000" />
+      <workItem from="1619374360858" duration="156000" />
     </task>
     <task id="LOCAL-00001" summary="Made some changes so the project could build">
       <created>1619337685056</created>
@@ -87,7 +98,14 @@
       <option name="project" value="LOCAL" />
       <updated>1619337874748</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="specified exit on close">
+      <created>1619338104773</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1619338104773</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -103,11 +121,13 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Made some changes so the project could build" />
     <MESSAGE value="Implemented proof-of-concept GUI" />
     <MESSAGE value="added deserializeItemArrayObject" />
-    <option name="LAST_COMMIT_MESSAGE" value="added deserializeItemArrayObject" />
+    <MESSAGE value="specified exit on close" />
+    <option name="LAST_COMMIT_MESSAGE" value="specified exit on close" />
   </component>
 </project>
