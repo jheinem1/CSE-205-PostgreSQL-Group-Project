@@ -109,7 +109,7 @@ public class DbConnections {
         }
     }
 
-    public static void selectCommand(Connection connection, String sqlCommand, String[] items)
+    /*public static void selectCommand(Connection connection, String sqlCommand, String[] items)
     {
 
         Statement statement = null;
@@ -137,7 +137,7 @@ public class DbConnections {
             System.err.println("Catch all Exception occurred: "+e.getClass().getName()+": "+e.getMessage());
             System.exit(0);
         }
-    }
+    }*/
     
     public static void selectAllCommandForTest(Connection connection, String table)
     {
@@ -200,6 +200,7 @@ public class DbConnections {
     }
     
     private static void selectCommandFromDelete(Connection connection, String table)
+
     {
 
         Statement statement = null;
@@ -229,6 +230,45 @@ public class DbConnections {
             System.exit(0);
         }
     }
+
+    public static String selectStoredCartCommand(Connection connection, String table, int custID)
+    {
+
+        Statement statement = null;
+        try{
+            statement = connection.createStatement();
+            String sqlCommand = "Select * FROM " + table + ";";
+            
+            ResultSet resultSet = statement.executeQuery(sqlCommand);
+            int id = -1;
+            String cart = "ERROR";
+            while(resultSet.next()){
+                id = resultSet.getInt("id");
+                cart = resultSet.getString("cart");
+                System.out.println("ID: " + id + "Cart: " + cart); 
+                if (id == custID) {
+                	break;
+                }
+            }
+            resultSet.close();
+            statement.close();
+            System.out.println("Data Selected...");
+            if (id == custID) {
+            	return cart;
+            }
+            
+            
+        } catch (SQLException e) {
+            e.printStackTrace();
+            System.exit(0);
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.err.println("Catch all Exception occurred: "+e.getClass().getName()+": "+e.getMessage());
+            System.exit(0);
+        }
+        return "Cart with ID " +  custID + "not found";
+    }
+    
     
     public static void selectTestsCommand(Connection connection, String table)
     {

@@ -24,7 +24,7 @@ public class Person {
 		if (isValidCharacters(lName)) { this.lName = lName; } 
 		if (isValidCharacters(address)) { this.address = address; } 
 		if (isValidCharacters(emailAddress)) { this.emailAddress = emailAddress; } 
-		if (isValidCharacters(position)) { this.position = position; }
+		if (isValidCharacters(position.toLowerCase())) { this.position = position.toLowerCase(); }
 		ID = lastID + 1;
 		lastID += 1;
 		if (isValidCharacters(username)) { this.username = username; }
@@ -113,11 +113,11 @@ public class Person {
 	private static boolean isValidPosition(String cheese) {
 		
 		switch(cheese) {
-			case "Customer":
+			case "customer":
 				return true;
-			case "Employee":
+			case "employee":
 				return true;
-			case "Manager":
+			case "manager":
 				return true;
 			default:
 				return false;
