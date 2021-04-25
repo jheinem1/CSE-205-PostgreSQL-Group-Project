@@ -9,10 +9,10 @@ public class Customer extends Person {
 	
 	//CONTAINS PLACEHOLDER METHODS FOR SHOPPING CART
 
-	public shoppingCart getShoppingCart(DbConnections base, String databaseName) {//Obtains shopping cart from database
-		
-		String base.selectStoredCart(base.getConnection(), databaseName, this.getID()).decode();
-		
+	public ShoppingCart getShoppingCart(DbConnections base, String databaseName) {//Obtains shopping cart from database
+//		TODO: Resolve syntax error in below line
+//		String base.selectStoredCart(base.getConnection(), databaseName, this.getID()).decode();
+		throw new UnsupportedOperationException("Method not implemented yet");
 	}
 	
 	//CONTAINS PLACEHOLDER METHODS FOR SHOPPING CART

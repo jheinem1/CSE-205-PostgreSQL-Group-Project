@@ -1,4 +1,3 @@
-package Project;
 import java.util.ArrayList;
 
 public class ShoppingCart 
@@ -29,4 +28,8 @@ public class ShoppingCart
 		
 		System.out.println(this.toString());
 	}
+
+    public String encode() {
+		throw new UnsupportedOperationException("Method not implemented");
+    }
 }
