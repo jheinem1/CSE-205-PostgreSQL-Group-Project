@@ -49,6 +49,8 @@ public class Inventory {
 		items.add(new Item(name, price, quantity));
 	}
 	
+	//Should add a removeItem so as to help in thing like Manager.java
+	
 	public String toString() {
 		
 		String s = "";
