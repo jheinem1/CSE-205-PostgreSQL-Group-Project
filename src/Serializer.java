@@ -123,17 +123,17 @@ public class Serializer {
      * Deserializes an Item object from a valid JSON object
      */
     public static Item deserializeItemObject(String json) {
-        var props = json.split(",");
+//        var props = json.split(",");
         var propertyPattern = Pattern.compile("\".*([^\"\\\\]+)\"\\s*=\\s*\"([^\"\\\\]*)\".*");
-        // var propertyMatcher = propertyPattern.matcher(json);
+        var propertyMatcher = propertyPattern.matcher(json);
         var propertyTable = new HashMap<String, String>();
-        for (var prop : props) {
-            var propertyMatcher = propertyPattern.matcher(prop);
-            propertyTable.put(propertyMatcher.group(1), propertyMatcher.group(2));
-        }
-        // while (propertyMatcher.find())
-        //     propertyTable.put(propertyMatcher.group(1), propertyMatcher.group(2));
-        if (propertyTable.get("type") != null && propertyTable.get("type") == "Item")
+//        for (var prop : props) {
+//            var propertyMatcher = propertyPattern.matcher(prop);
+//            propertyTable.put(propertyMatcher.group(1), propertyMatcher.group(2));
+//        }
+         while (propertyMatcher.find())
+             propertyTable.put(propertyMatcher.group(1), propertyMatcher.group(2));
+        if (propertyTable.get("type") != null && propertyTable.get("type").equals("Item"))
             return new Item(propertyTable.get("name"), Double.parseDouble(propertyTable.get("price")),
                     Integer.parseInt(propertyTable.get("amount")));
         else
