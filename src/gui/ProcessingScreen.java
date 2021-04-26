@@ -5,6 +5,8 @@
  */
 package gui;
 
+import java.awt.event.ActionListener;
+
 /**
  *
  * @author jhein
@@ -206,4 +208,20 @@ public class ProcessingScreen extends javax.swing.JPanel {
     private javax.swing.JTextField jTextField8;
     private javax.swing.JTextField jTextField9;
     // End of variables declaration//GEN-END:variables
+
+    public void onUpdateClick(ActionListener listener) {
+        jButton2.addActionListener(listener);
+    }
+
+    public void onDeleteClick(ActionListener listener) {
+        jButton3.addActionListener(listener);
+    }
+
+    public void onLogoutClick(ActionListener listener) {
+        jButton4.addActionListener(listener);
+    }
+
+    public void onShipClick(ActionListener listener) {
+        jButton1.addActionListener(listener);
+    }
 }

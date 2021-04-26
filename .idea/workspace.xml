@@ -3,8 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="e7d3211a-169f-410d-8b55-b0afda4c4f35" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DbConnections.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DbConnections.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/DeleteAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/DeleteAccount.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/ProcessingScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/ProcessingScreen.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,7 +75,7 @@
       <workItem from="1618787439252" duration="487000" />
       <workItem from="1619337088351" duration="1078000" />
       <workItem from="1619374360858" duration="7379000" />
-      <workItem from="1619394970834" duration="7400000" />
+      <workItem from="1619394970834" duration="8047000" />
     </task>
     <task id="LOCAL-00001" summary="Made some changes so the project could build">
       <created>1619337685056</created>
@@ -168,7 +168,14 @@
       <option name="project" value="LOCAL" />
       <updated>1619467967614</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Fixed some syntax issues in app.java">
+      <created>1619476233959</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1619476233959</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -200,6 +207,7 @@
     <MESSAGE value="Added some new methods for customer account creation" />
     <MESSAGE value="Added some new methods for account creation" />
     <MESSAGE value="Added method for the login screen" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added method for the login screen" />
+    <MESSAGE value="Fixed some syntax issues in app.java" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed some syntax issues in app.java" />
   </component>
 </project>
