@@ -5,6 +5,8 @@
  */
 package gui;
 
+import java.awt.event.ActionListener;
+
 /**
  *
  * @author jhein
@@ -140,4 +142,24 @@ public class LoginScreen extends javax.swing.JPanel {
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField5;
     // End of variables declaration//GEN-END:variables
+
+    public void onLoginClick(ActionListener listener) {
+        jButton2.addActionListener(listener);
+    }
+
+    public void onCancelClick(ActionListener listener) {
+        jButton1.addActionListener(listener);
+    }
+
+    public void onCreateClick(ActionListener listener) {
+        jButton3.addActionListener(listener);
+    }
+
+    public String getField(String field) {
+        return switch (field) {
+            case "username" -> jTextField5.getText();
+            case "password" -> jTextField1.getText();
+            default -> null;
+        };
+    }
 }
