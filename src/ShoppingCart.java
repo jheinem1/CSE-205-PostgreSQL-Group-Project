@@ -12,6 +12,10 @@ public class ShoppingCart
 		items.add(i);
 	}
 	
+	public void removeFromCart(Item i) {
+		items.remove(i);
+	}
+	
 	public String toString() {
 		
 		String s = "";
