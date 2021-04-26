@@ -5,6 +5,10 @@
  */
 package gui;
 
+import javax.swing.*;
+import java.awt.event.ActionListener;
+import java.util.ArrayList;
+
 /**
  *
  * @author jhein
@@ -192,4 +196,63 @@ public class CustomerScreen extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTextField jTextField5;
     // End of variables declaration//GEN-END:variables
+
+    public void onUpdateClick(ActionListener listener) {
+        jButton3.addActionListener(listener);
+    }
+
+    public void onDeleteClick(ActionListener listener) {
+        jButton5.addActionListener(listener);
+    }
+
+    public void onLogoutClick(ActionListener listener) {
+        jButton4.addActionListener(listener);
+    }
+
+    public void onAddClick(ActionListener listener) {
+        jButton1.addActionListener(listener);
+    }
+
+    public String getField(String field) {
+        return switch (field) {
+            case "quantity" -> jTextField5.getText();
+            default -> null;
+        };
+    }
+
+    public void clearAllItems() {
+        jScrollPane3.removeAll();
+    }
+
+    public void addItem(String name) {
+        var item = new JCheckBox(name);
+        item.setBackground(new java.awt.Color(180, 180, 181));
+        item.setFont(new java.awt.Font("sansserif", 1, 18)); // NOI18N
+        item.setForeground(new java.awt.Color(0, 0, 0));
+        jScrollPane3.setViewportView(item);
+    }
+
+    public void addItemToCart(String name) {
+        var item = new JCheckBox(name);
+        item.setBackground(new java.awt.Color(180, 180, 181));
+        item.setFont(new java.awt.Font("sansserif", 1, 18)); // NOI18N
+        item.setForeground(new java.awt.Color(0, 0, 0));
+        jScrollPane1.setViewportView(item);
+    }
+
+    public String[] getSelectedItems() {
+        var selected = new ArrayList<String>();
+        for (var component : jScrollPane3.getComponents()) /*or jScrollPane3.getViewport().getComponents() not 100% sure*/
+            if (component.getClass().getName().equals("JCheckBox") && ((JCheckBox) component).isSelected())
+                selected.add(((JCheckBox) component).getText());
+        return selected.toArray(new String[0]);
+    }
+
+    public String[] getSelectedCartItems() {
+        var selected = new ArrayList<String>();
+        for (var component : jScrollPane1.getComponents()) /*or jScrollPane3.getViewport().getComponents() not 100% sure*/
+            if (component.getClass().getName().equals("JCheckBox") && ((JCheckBox) component).isSelected())
+                selected.add(((JCheckBox) component).getText());
+        return selected.toArray(new String[0]);
+    }
 }
