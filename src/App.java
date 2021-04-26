@@ -189,7 +189,6 @@ public class App {
         processingScreen.onLogoutClick(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                //TODO: implement logout functionality
                 baseFrame.add(loginFirstScreen);
                 baseFrame.remove(deleteAccount);
                 baseFrame.getContentPane().validate();
