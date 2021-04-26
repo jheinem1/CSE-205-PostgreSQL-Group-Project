@@ -5,6 +5,9 @@
  */
 package gui;
 
+import java.awt.event.ActionListener;
+import java.util.Objects;
+
 /**
  *
  * @author jhein
@@ -219,4 +222,28 @@ public class StaffCreateAccount extends javax.swing.JPanel {
     private javax.swing.JTextField jTextField8;
     private javax.swing.JTextField jTextField9;
     // End of variables declaration//GEN-END:variables
+
+    public void onLoginClick(ActionListener listener) {
+        jButton1.addActionListener(listener);
+    }
+
+    public void onCancelClick(ActionListener listener) {
+        jButton3.addActionListener(listener);
+    }
+
+    public void onCreateClick(ActionListener listener) {
+        jButton2.addActionListener(listener);
+    }
+
+    public String getField(String field) {
+        return switch (field) {
+            case "firstName" -> jTextField7.getText();
+            case "lastName" -> jTextField5.getText();
+            case "username" -> jTextField9.getText();
+            case "password" -> jTextField8.getText();
+            case "email" -> jTextField6.getText();
+            case "position" -> Objects.requireNonNull(jComboBox1.getSelectedItem()).toString();
+            default -> null;
+        };
+    }
 }

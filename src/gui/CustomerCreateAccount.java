@@ -231,6 +231,10 @@ public class CustomerCreateAccount extends javax.swing.JPanel {
         jButton1.addActionListener(listener);
     }
 
+    public void onCreateClick(ActionListener listener) {
+        jButton2.addActionListener(listener);
+    }
+
     public String getField(String field) {
         return switch (field) {
             case "firstName" -> jTextField7.getText();
