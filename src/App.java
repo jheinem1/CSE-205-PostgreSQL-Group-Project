@@ -20,6 +20,8 @@ public class App {
         var staffCreateAccount = new StaffCreateAccount();
         var customerScreen = new CustomerScreen();
         var empScreen = new EmployeeScreen();
+        var deleteAccount = new DeleteAccount();
+        var processingScreen = new ProcessingScreen();
         //var manScreen = new ManagerScreen();
 
         baseFrame.add(loginFirstScreen);
@@ -116,6 +118,35 @@ public class App {
             	}
             	
           
+            }
+        });
+
+        deleteAccount.onCancelClick(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                baseFrame.add(empScreen);
+                baseFrame.remove(deleteAccount);
+                baseFrame.getContentPane().validate();
+                baseFrame.getContentPane().repaint();
+            }
+        });
+        deleteAccount.onDeleteClick(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                //TODO: add delete account functionality
+                baseFrame.add(empScreen);
+                baseFrame.remove(deleteAccount);
+                baseFrame.getContentPane().validate();
+                baseFrame.getContentPane().repaint();
+            }
+        });
+        deleteAccount.onLogoutClick(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                baseFrame.add(loginFirstScreen);
+                baseFrame.remove(deleteAccount);
+                baseFrame.getContentPane().validate();
+                baseFrame.getContentPane().repaint();
             }
         });
         
