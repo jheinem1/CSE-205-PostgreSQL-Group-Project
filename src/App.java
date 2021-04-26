@@ -22,6 +22,7 @@ public class App {
         var empScreen = new EmployeeScreen();
         var deleteAccount = new DeleteAccount();
         var processingScreen = new ProcessingScreen();
+        var employeeAccountScreen = new EmployeeAccountScreen();
         //var manScreen = new ManagerScreen();
 
         baseFrame.add(loginFirstScreen);
@@ -190,7 +191,7 @@ public class App {
             @Override
             public void actionPerformed(ActionEvent e) {
                 baseFrame.add(loginFirstScreen);
-                baseFrame.remove(deleteAccount);
+                baseFrame.remove(processingScreen);
                 baseFrame.getContentPane().validate();
                 baseFrame.getContentPane().repaint();
             }
@@ -199,6 +200,24 @@ public class App {
             @Override
             public void actionPerformed(ActionEvent e) {
                 //TODO: implement item "shipping" (just delete 🙃)
+            }
+        });
+        processingScreen.onAccountsClick(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                baseFrame.add(employeeAccountScreen);
+                baseFrame.remove(processingScreen);
+                baseFrame.getContentPane().validate();
+                baseFrame.getContentPane().repaint();
+            }
+        });
+        processingScreen.onStoreClick(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                baseFrame.add(empScreen);
+                baseFrame.remove(processingScreen);
+                baseFrame.getContentPane().validate();
+                baseFrame.getContentPane().repaint();
             }
         });
         

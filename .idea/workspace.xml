@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="e7d3211a-169f-410d-8b55-b0afda4c4f35" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/EmployeeAccountScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/EmployeeAccountScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/EmployeeScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/EmployeeScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/ProcessingScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/ProcessingScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,7 +74,7 @@
       <workItem from="1618787439252" duration="487000" />
       <workItem from="1619337088351" duration="1078000" />
       <workItem from="1619374360858" duration="7379000" />
-      <workItem from="1619394970834" duration="11775000" />
+      <workItem from="1619394970834" duration="12068000" />
     </task>
     <task id="LOCAL-00001" summary="Made some changes so the project could build">
       <created>1619337685056</created>
@@ -225,7 +223,21 @@
       <option name="project" value="LOCAL" />
       <updated>1619479627705</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Added new processing and accounts button to EmployeeScreen, EmployeeAccountScreen, and ProcessingScreen">
+      <created>1619480630414</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1619480630414</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Added new processing and accounts button to EmployeeScreen, EmployeeAccountScreen, and ProcessingScreen">
+      <created>1619480655947</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1619480655947</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -265,6 +277,7 @@
     <MESSAGE value="Added some actionlisteners for processingScreen" />
     <MESSAGE value="Implemented method for EmployeeScreen" />
     <MESSAGE value="removed unnecessary todo" />
-    <option name="LAST_COMMIT_MESSAGE" value="removed unnecessary todo" />
+    <MESSAGE value="Added new processing and accounts button to EmployeeScreen, EmployeeAccountScreen, and ProcessingScreen" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added new processing and accounts button to EmployeeScreen, EmployeeAccountScreen, and ProcessingScreen" />
   </component>
 </project>
