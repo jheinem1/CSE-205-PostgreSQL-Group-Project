@@ -83,26 +83,51 @@ public class App {
         loginScreen.onCreateClick(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-            	System.out.println("real beg");
+                baseFrame.add(accountTypeSelection);
+                baseFrame.remove(loginScreen);
+                baseFrame.getContentPane().validate();
+                baseFrame.getContentPane().repaint();
+            }
+        });
+     
+        loginScreen.onLoginClick(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+            	
+            	/*Customer test = new Customer("Test", "McTestFace", "3 E. Road", "lololol@testing.com", "Username", "Password");
+            	LinkedHashMap<String, String> toInsert = new LinkedHashMap<String, String>();
+        		toInsert.put("ID" , "7");
+        		toInsert.put("ENCODEDPERSON" , Serializer.serialize(test));
+            	toInsert.put("USERNAME", "Username");
+        		//base.insertCommand(connection, DbConnections.generateInsertCommand(toInsert, "USERS"));
+            	*/
+            	
+            	System.out.println(loginScreen.getField("username"));
+            	
             	String personCoded = base.selectLoginCommand(base.getConnection(), "USERS", loginScreen.getField("username"));
+            	System.out.println("Serialized Person: " + personCoded + "\n");
+            	if (personCoded.equals("Could not find person with username " +  loginScreen.getField("username"))) {
+            		System.out.println("Incorrect username. Try again :P");
+            		return;
+            	}
             	Person user = Serializer.deserializePersonObject(personCoded);
             	System.out.println("beg");
-            	if (user.getPassword().equals(loginScreen.getField("password"))) {
-            		if (user.getPosition().equals("Customer")) {
+            	if (user.getPassword().equals(loginScreen.getField("password")) ) {
+            		if (user.getPosition().equals("customer")) {
             		      baseFrame.add(customerScreen);
                           baseFrame.remove(loginScreen);
                           baseFrame.getContentPane().validate();
                           baseFrame.getContentPane().repaint();
                           System.out.println("cus");
             		}
-            		else if (user.getPosition().equals("Employee")) {
+            		else if (user.getPosition().equals("employee")) {
             		      baseFrame.add(empScreen);
                           baseFrame.remove(loginScreen);
                           baseFrame.getContentPane().validate();
                           baseFrame.getContentPane().repaint();
                           System.out.println("emp");
             		}
-            		else if (user.getPosition().equals("Manager")) {
+            		else if (user.getPosition().equals("manager")) {
             		      baseFrame.add(empScreen);
                           baseFrame.remove(loginScreen);
                           baseFrame.getContentPane().validate();
@@ -120,7 +145,6 @@ public class App {
           
             }
         });
-
         deleteAccount.onCancelClick(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
