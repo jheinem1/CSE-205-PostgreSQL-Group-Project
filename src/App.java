@@ -78,29 +78,29 @@ public class App {
             }
         });
      
-        loginScreen.onCreateAccountClick(new ActionListener() {
+        loginScreen.onCreateClick(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
             	System.out.println("real beg");
             	String personCoded = base.selectLoginCommand(base.getConnection(), "USERS", loginScreen.getField("username"));
             	Person user = Serializer.deserializePersonObject(personCoded);
             	System.out.println("beg");
-            	if (user.getPassword() == loginScreen.getField("password") ) {
-            		if (user.getPosition() == "Customer") {
+            	if (user.getPassword().equals(loginScreen.getField("password"))) {
+            		if (user.getPosition().equals("Customer")) {
             		      baseFrame.add(customerScreen);
                           baseFrame.remove(loginScreen);
                           baseFrame.getContentPane().validate();
                           baseFrame.getContentPane().repaint();
                           System.out.println("cus");
             		}
-            		else if (user.getPosition() == "Employee") {
+            		else if (user.getPosition().equals("Employee")) {
             		      baseFrame.add(empScreen);
                           baseFrame.remove(loginScreen);
                           baseFrame.getContentPane().validate();
                           baseFrame.getContentPane().repaint();
                           System.out.println("emp");
             		}
-            		else if (user.getPosition() == "Manager") {
+            		else if (user.getPosition().equals("Manager")) {
             		      baseFrame.add(empScreen);
                           baseFrame.remove(loginScreen);
                           baseFrame.getContentPane().validate();

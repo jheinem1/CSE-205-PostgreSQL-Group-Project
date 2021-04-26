@@ -406,6 +406,9 @@ public class DbConnections {
     	return dictionary;
     	
     }
- 
-    
+
+
+    public String selectLoginCommand(Connection connection, String users, String username) {
+        throw new UnsupportedOperationException("Method not implemented");
+    }
 }
