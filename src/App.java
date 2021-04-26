@@ -149,6 +149,35 @@ public class App {
                 baseFrame.getContentPane().repaint();
             }
         });
+
+        processingScreen.onUpdateClick(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                //TODO: implement item updating
+            }
+        });
+        processingScreen.onDeleteClick(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                //TODO: implement item deletion
+            }
+        });
+        processingScreen.onLogoutClick(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                //TODO: implement logout functionality
+                baseFrame.add(loginFirstScreen);
+                baseFrame.remove(deleteAccount);
+                baseFrame.getContentPane().validate();
+                baseFrame.getContentPane().repaint();
+            }
+        });
+        processingScreen.onShipClick(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                //TODO: implement item "shipping" (just delete 🙃)
+            }
+        });
         
      base.close();   
         
