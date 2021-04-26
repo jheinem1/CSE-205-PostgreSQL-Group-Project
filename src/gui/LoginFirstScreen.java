@@ -5,6 +5,8 @@
  */
 package gui;
 
+import java.awt.event.ActionListener;
+
 /**
  *
  * @author jhein
@@ -88,4 +90,12 @@ public class LoginFirstScreen extends javax.swing.JPanel {
     private javax.swing.JButton jButton2;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
+
+    public void onLoginClick(ActionListener listener) {
+        jButton1.addActionListener(listener);
+    }
+
+    public void onCreateAccountClick(ActionListener listener) {
+        jButton2.addActionListener(listener);
+    }
 }

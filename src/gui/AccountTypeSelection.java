@@ -5,6 +5,8 @@
  */
 package gui;
 
+import java.awt.event.ActionListener;
+
 /**
  *
  * @author jhein
@@ -102,4 +104,12 @@ public class AccountTypeSelection extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
+
+    public void onEmployeeClick(ActionListener listener) {
+        jButton2.addActionListener(listener);
+    }
+
+    public void onCustomerClick(ActionListener listener) {
+        jButton1.addActionListener(listener);
+    }
 }

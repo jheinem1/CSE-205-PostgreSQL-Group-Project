@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e7d3211a-169f-410d-8b55-b0afda4c4f35" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/Serializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Serializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/AccountTypeSelection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/AccountTypeSelection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/LoginFirstScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/LoginFirstScreen.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,7 +32,7 @@
       <recent name="C:\Users\jhein\Documents\Github\CSE-205-PostgreSQL-Group-Project\src" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Serializer">
+  <component name="RunManager" selected="Application.App">
     <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="App" />
       <module name="CSE-205-PostgreSQL-Group-Project" />
@@ -44,23 +47,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Serializer" />
         <item itemvalue="Application.App" />
+        <item itemvalue="Application.Serializer" />
       </list>
     </recent_temporary>
   </component>
@@ -74,7 +75,8 @@
       <updated>1618787432259</updated>
       <workItem from="1618787439252" duration="487000" />
       <workItem from="1619337088351" duration="1078000" />
-      <workItem from="1619374360858" duration="3592000" />
+      <workItem from="1619374360858" duration="7379000" />
+      <workItem from="1619394970834" duration="1881000" />
     </task>
     <task id="LOCAL-00001" summary="Made some changes so the project could build">
       <created>1619337685056</created>
@@ -132,7 +134,14 @@
       <option name="project" value="LOCAL" />
       <updated>1619378446803</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Added some helpful comments">
+      <created>1619378488391</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1619378488391</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -159,6 +168,7 @@
     <MESSAGE value="Reverted to original serialization method" />
     <MESSAGE value="Fixed issues with array serialization/deserialization" />
     <MESSAGE value="Fixed comma issues" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed comma issues" />
+    <MESSAGE value="Added some helpful comments" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added some helpful comments" />
   </component>
 </project>
