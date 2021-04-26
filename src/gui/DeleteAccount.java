@@ -5,6 +5,8 @@
  */
 package gui;
 
+import java.awt.event.ActionListener;
+
 /**
  *
  * @author jhein
@@ -100,4 +102,16 @@ public class DeleteAccount extends javax.swing.JPanel {
     private javax.swing.JButton jButton4;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
+
+    public void onLogoutClick(ActionListener listener) {
+        jButton4.addActionListener(listener);
+    }
+
+    public void onDeleteClick(ActionListener listener) {
+        jButton1.addActionListener(listener);
+    }
+
+    public void onCancelClick(ActionListener listener) {
+        jButton2.addActionListener(listener);
+    }
 }
