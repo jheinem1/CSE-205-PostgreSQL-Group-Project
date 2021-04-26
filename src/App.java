@@ -4,6 +4,7 @@ import gui.*;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.Connection;
 
 public class App {
     public static void main(String[] args) throws Exception {
@@ -17,9 +18,18 @@ public class App {
         var accountTypeSelection = new AccountTypeSelection();
         var customerCreateAccount = new CustomerCreateAccount();
         var staffCreateAccount = new StaffCreateAccount();
+        var customerScreen = new CustomerScreen();
+        var empScreen = new EmployeeScreen();
+        //var manScreen = new ManagerScreen();
 
         baseFrame.add(loginFirstScreen);
         baseFrame.setVisible(true);
+        
+        DbConnections base = new DbConnections();
+        Connection connection = base.getConnection();
+        
+        //COMMENT THIS OUT THE SECOND TIME YOU RUN THIS PROGRAM
+       // base.createTable(connection, DbConnections.generateCreateCommand("USERS", "ID INT PRIMARY KEY NOT NULL, ENCODEDPERSON TEXT NOT NULL, USERNAME TEXT NOT NULL"));
 
         loginFirstScreen.onLoginClick(new ActionListener() {
             @Override
@@ -58,5 +68,59 @@ public class App {
                 baseFrame.getContentPane().repaint();
             }
         });
+        loginScreen.onCancelClick(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                baseFrame.add(loginFirstScreen);
+                baseFrame.remove(loginScreen);
+                baseFrame.getContentPane().validate();
+                baseFrame.getContentPane().repaint();
+            }
+        });
+     
+        loginScreen.onCreateAccountClick(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+            	System.out.println("real beg");
+            	String personCoded = base.selectLoginCommand(base.getConnection(), "USERS", loginScreen.getField("username"));
+            	Person user = Serializer.deserializePersonObject(personCoded);
+            	System.out.println("beg");
+            	if (user.getPassword() == loginScreen.getField("password") ) {
+            		if (user.getPosition() == "Customer") {
+            		      baseFrame.add(customerScreen);
+                          baseFrame.remove(loginScreen);
+                          baseFrame.getContentPane().validate();
+                          baseFrame.getContentPane().repaint();
+                          System.out.println("cus");
+            		}
+            		else if (user.getPosition() == "Employee") {
+            		      baseFrame.add(empScreen);
+                          baseFrame.remove(loginScreen);
+                          baseFrame.getContentPane().validate();
+                          baseFrame.getContentPane().repaint();
+                          System.out.println("emp");
+            		}
+            		else if (user.getPosition() == "Manager") {
+            		      baseFrame.add(empScreen);
+                          baseFrame.remove(loginScreen);
+                          baseFrame.getContentPane().validate();
+                          baseFrame.getContentPane().repaint();
+                          System.out.println("real man");
+            		}
+            		else {
+            			System.out.println("ERROR. Position is NOT C, E, or M for " + user);
+            		}
+            	}
+            	else {
+            		System.out.println("Incorrect username or password");
+            	}
+            	
+          
+            }
+        });
+        
+     base.close();   
+        
     }
+
 }
