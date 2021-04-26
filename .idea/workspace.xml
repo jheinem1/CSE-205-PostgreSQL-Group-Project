@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e7d3211a-169f-410d-8b55-b0afda4c4f35" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gui/CustomerScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/CustomerScreen.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -74,7 +73,7 @@
       <workItem from="1618787439252" duration="487000" />
       <workItem from="1619337088351" duration="1078000" />
       <workItem from="1619374360858" duration="7379000" />
-      <workItem from="1619394970834" duration="12528000" />
+      <workItem from="1619394970834" duration="12716000" />
     </task>
     <task id="LOCAL-00001" summary="Made some changes so the project could build">
       <created>1619337685056</created>
@@ -244,7 +243,14 @@
       <option name="project" value="LOCAL" />
       <updated>1619480957159</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Implemented methods for CustomerScreen">
+      <created>1619481387777</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1619481387777</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -286,6 +292,7 @@
     <MESSAGE value="removed unnecessary todo" />
     <MESSAGE value="Added new processing and accounts button to EmployeeScreen, EmployeeAccountScreen, and ProcessingScreen" />
     <MESSAGE value="Added handling of screen switcher for processing screen" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added handling of screen switcher for processing screen" />
+    <MESSAGE value="Implemented methods for CustomerScreen" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implemented methods for CustomerScreen" />
   </component>
 </project>

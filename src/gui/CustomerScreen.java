@@ -224,6 +224,10 @@ public class CustomerScreen extends javax.swing.JPanel {
         jScrollPane3.removeAll();
     }
 
+    public void clearAllCartItems() {
+        jScrollPane1.removeAll();
+    }
+
     public void addItem(String name) {
         var item = new JCheckBox(name);
         item.setBackground(new java.awt.Color(180, 180, 181));
