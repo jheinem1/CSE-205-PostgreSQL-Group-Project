@@ -244,6 +244,10 @@ public class CustomerScreen extends javax.swing.JPanel {
         jScrollPane1.setViewportView(item);
     }
 
+    public void setCartTotal(double amt) {
+        jLabel1.setText(String.format("Shopping Cart | Total: $%.2f", amt));
+    }
+
     public String[] getSelectedItems() {
         var selected = new ArrayList<String>();
         for (var component : jScrollPane3.getComponents()) /*or jScrollPane3.getViewport().getComponents() not 100% sure*/
