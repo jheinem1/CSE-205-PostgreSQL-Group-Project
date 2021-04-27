@@ -134,12 +134,14 @@ public class App {
                         System.out.println("cus");
                     } else if (user.getPosition().equals("employee")) {
                         baseFrame.add(empScreen);
+                        empScreen.refreshItems(inventory.getNames().toArray(new String[0]));
                         baseFrame.remove(loginScreen);
                         baseFrame.getContentPane().validate();
                         baseFrame.getContentPane().repaint();
                         System.out.println("emp");
                     } else if (user.getPosition().equals("manager")) {
                         baseFrame.add(empScreen);
+                        empScreen.refreshItems(inventory.getNames().toArray(new String[0]));
                         baseFrame.remove(loginScreen);
                         baseFrame.getContentPane().validate();
                         baseFrame.getContentPane().repaint();
@@ -230,6 +232,7 @@ public class App {
             @Override
             public void actionPerformed(ActionEvent e) {
                 baseFrame.add(empScreen);
+                empScreen.refreshItems(inventory.getNames().toArray(new String[0]));
                 baseFrame.remove(processingScreen);
                 baseFrame.getContentPane().validate();
                 baseFrame.getContentPane().repaint();
@@ -270,6 +273,7 @@ public class App {
             @Override
             public void actionPerformed(ActionEvent e) {
                 baseFrame.add(processingScreen);
+                processingScreen.refreshItems(processing.getNames().toArray(new String[0]));
                 baseFrame.remove(empScreen);
                 baseFrame.getContentPane().validate();
                 baseFrame.getContentPane().repaint();
@@ -346,6 +350,7 @@ public class App {
                 }
                 baseFrame.add(empScreen);
                 baseFrame.remove(staffCreateAccount);
+                empScreen.refreshItems(inventory.getNames().toArray(new String[0]));
                 baseFrame.getContentPane().validate();
                 baseFrame.getContentPane().repaint();
                 
@@ -392,6 +397,8 @@ public class App {
             	
             	 base.insertCommand(connection, DbConnections.generateInsertCommand(toInsert, "USERS"));
             	 baseFrame.add(customerScreen);
+                customerScreen.refreshItems(inventory.getNames().toArray(new String[0]));
+                customerScreen.refreshCartItems(shoppingCart.getNames().toArray(new String[0]));
                  baseFrame.remove(customerCreateAccount);
                  baseFrame.getContentPane().validate();
                  baseFrame.getContentPane().repaint();
@@ -480,6 +487,7 @@ public class App {
             @Override
             public void actionPerformed(ActionEvent e) {
             	 baseFrame.add(processingScreen);
+                processingScreen.refreshItems(processing.getNames().toArray(new String[0]));
                  baseFrame.remove(employeeAccountScreen);
                  baseFrame.getContentPane().validate();
                  baseFrame.getContentPane().repaint();
@@ -490,6 +498,7 @@ public class App {
             @Override
             public void actionPerformed(ActionEvent e) {
             	 baseFrame.add(empScreen);
+                empScreen.refreshItems(inventory.getNames().toArray(new String[0]));
                  baseFrame.remove(employeeAccountScreen);
                  baseFrame.getContentPane().validate();
                  baseFrame.getContentPane().repaint();
