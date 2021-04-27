@@ -206,11 +206,15 @@ public class CustomerScreen extends javax.swing.JPanel {
     }
 
     public void onLogoutClick(ActionListener listener) {
-        jButton4.addActionListener(listener);
+        jButton2.addActionListener(listener);
     }
 
     public void onAddClick(ActionListener listener) {
         jButton1.addActionListener(listener);
+    }
+
+    public void onCheckoutClick(ActionListener listener) {
+        jButton4.addActionListener(listener);
     }
 
     public String getField(String field) {

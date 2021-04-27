@@ -20,6 +20,7 @@ public class App {
         var customerCreateAccount = new CustomerCreateAccount();
         var staffCreateAccount = new StaffCreateAccount();
         var customerScreen = new CustomerScreen();
+        var checkout = new Checkout();
         var empScreen = new EmployeeScreen();
         var deleteAccount = new DeleteAccount();
         var processingScreen = new ProcessingScreen();
@@ -385,6 +386,43 @@ public class App {
                  baseFrame.getContentPane().repaint();
             }
            });
+
+        customerScreen.onLogoutClick(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                baseFrame.add(loginFirstScreen);
+                baseFrame.remove(customerScreen);
+                baseFrame.getContentPane().validate();
+                baseFrame.getContentPane().repaint();
+            }
+        });
+        customerScreen.onAddClick(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+            }
+        });
+        customerScreen.onDeleteClick(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+            }
+        });
+        customerScreen.onUpdateClick(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+            }
+        });
+        customerScreen.onCheckoutClick(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                baseFrame.add(checkout);
+                baseFrame.remove(customerScreen);
+                baseFrame.getContentPane().validate();
+                baseFrame.getContentPane().repaint();
+            }
+        });
 
         //base.close();
 

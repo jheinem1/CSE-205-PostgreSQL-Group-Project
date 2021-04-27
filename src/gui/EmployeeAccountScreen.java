@@ -395,4 +395,10 @@ public class EmployeeAccountScreen extends javax.swing.JPanel {
 //            //Delete Account connects to database
 //        }
 //    }
+
+    public void refreshAccounts(String[] names) {
+        clearAllAccounts();
+        for (var name : names)
+            addAccount(name);
+    }
 }

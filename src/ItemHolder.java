@@ -43,6 +43,14 @@ public abstract class ItemHolder {
         return itemMap.keySet();
     }
 
+    public Item[] getValues() {
+        var out = new Item[itemMap.size()];
+        var i = 0;
+        for (var serializedItem : itemMap.values())
+            out[i++] = Serializer.deserializeItemObject(serializedItem);
+        return out;
+    }
+
     public HashMap<String, String> getMap() {
         return itemMap;
     }
