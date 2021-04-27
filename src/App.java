@@ -420,6 +420,9 @@ public class App {
             public void actionPerformed(ActionEvent e) {
                 baseFrame.add(checkout);
                 baseFrame.remove(customerScreen);
+
+                checkout.setCartTotal(shoppingCart.getTotalCost());
+
                 baseFrame.getContentPane().validate();
                 baseFrame.getContentPane().repaint();
             }

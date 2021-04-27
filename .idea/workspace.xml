@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e7d3211a-169f-410d-8b55-b0afda4c4f35" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -83,7 +84,7 @@
       <workItem from="1619374360858" duration="7379000" />
       <workItem from="1619394970834" duration="17656000" />
       <workItem from="1619493382884" duration="357000" />
-      <workItem from="1619493757591" duration="4144000" />
+      <workItem from="1619493757591" duration="4211000" />
     </task>
     <task id="LOCAL-00001" summary="Made some changes so the project could build">
       <created>1619337685056</created>
@@ -379,7 +380,14 @@
       <option name="project" value="LOCAL" />
       <updated>1619497840456</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="fixed merge error">
+      <created>1619497954943</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1619497954943</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -398,7 +406,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added method to DeleteAccount" />
     <MESSAGE value="Implemented buttons (partially) for delete account screen" />
     <MESSAGE value="Implemented methods for ProcessingScreen" />
     <MESSAGE value="Added some actionlisteners for processingScreen" />
@@ -423,6 +430,7 @@
     <MESSAGE value="added some TODOs" />
     <MESSAGE value="Added refreshCartItems to checkout" />
     <MESSAGE value="Implemented checkout screen" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implemented checkout screen" />
+    <MESSAGE value="fixed merge error" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed merge error" />
   </component>
 </project>
