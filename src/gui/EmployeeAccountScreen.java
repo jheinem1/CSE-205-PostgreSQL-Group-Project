@@ -364,15 +364,15 @@ public class EmployeeAccountScreen extends javax.swing.JPanel {
         return selected.toArray(new String[0]);
     }
     
-    public void actionPreformed(ActionEvent e){
-        if(e.getSource()==jbutton1){
-            //Create Account connects to database
-        }
-        if(e.getSource()==jbutton2){
-            //Update Account connects to database
-        }
-        if(e.getSource()==jbutton3){
-            //Delete Account connects to database
-        }
-    }
+//    public void actionPreformed(ActionEvent e){
+//        if(e.getSource()==jbutton1){
+//            //Create Account connects to database
+//        }
+//        if(e.getSource()==jbutton2){
+//            //Update Account connects to database
+//        }
+//        if(e.getSource()==jbutton3){
+//            //Delete Account connects to database
+//        }
+//    }
 }
