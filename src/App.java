@@ -399,19 +399,19 @@ public class App {
         customerScreen.onAddClick(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                //TODO implement
             }
         });
         customerScreen.onDeleteClick(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                //TODO implement
             }
         });
         customerScreen.onUpdateClick(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                //TODO implement
             }
         });
         customerScreen.onCheckoutClick(new ActionListener() {
