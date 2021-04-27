@@ -4,7 +4,7 @@ import java.util.Set;
 
 public abstract class ItemHolder {
 
-    private final HashMap<String, String> itemMap = new HashMap<String, String>();
+    protected final HashMap<String, String> itemMap = new HashMap<String, String>();
 
     public Item getItemByName(String name) {
         return Serializer.deserializeItemObject(itemMap.get(name));
