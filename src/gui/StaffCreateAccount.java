@@ -246,4 +246,16 @@ public class StaffCreateAccount extends javax.swing.JPanel {
             default -> null;
         };
     }
+    
+    public void actionPreformed(ActionEvent e){
+        if(e.getSource()==jbutton1){
+            //Login
+        }
+        if(e.getSource()==jbutton2){
+            //Create Account connects to database
+        }
+        if(e.getSource()==jbutton3){
+            //Cancel
+        }
+    }
 }
