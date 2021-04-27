@@ -2,14 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e7d3211a-169f-410d-8b55-b0afda4c4f35" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ItemHolder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Processing.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/EmployeeAccountScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/EmployeeAccountScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/StaffCreateAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/StaffCreateAccount.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/ProcessingScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/ProcessingScreen.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -22,6 +32,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="extract.method.default.visibility" value="private" />
@@ -75,7 +86,9 @@
       <workItem from="1618787439252" duration="487000" />
       <workItem from="1619337088351" duration="1078000" />
       <workItem from="1619374360858" duration="7379000" />
-      <workItem from="1619394970834" duration="15632000" />
+      <workItem from="1619394970834" duration="17656000" />
+      <workItem from="1619493382884" duration="357000" />
+      <workItem from="1619493757591" duration="641000" />
     </task>
     <task id="LOCAL-00001" summary="Made some changes so the project could build">
       <created>1619337685056</created>
@@ -287,7 +300,28 @@
       <option name="project" value="LOCAL" />
       <updated>1619483347170</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="Commented out 'actionPreformed' method">
+      <created>1619491245911</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1619491245911</updated>
+    </task>
+    <task id="LOCAL-00032" summary="Added address field">
+      <created>1619492386000</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1619492386000</updated>
+    </task>
+    <task id="LOCAL-00033" summary="Replaced new switch statement with old one">
+      <created>1619493043855</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1619493043855</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -306,9 +340,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="specified exit on close" />
-    <MESSAGE value="Removed duplicate files" />
-    <MESSAGE value="Reverted to original serialization method" />
     <MESSAGE value="Fixed issues with array serialization/deserialization" />
     <MESSAGE value="Fixed comma issues" />
     <MESSAGE value="Added some helpful comments" />
@@ -331,6 +362,9 @@
     <MESSAGE value="Implemented additional cart-related methods" />
     <MESSAGE value="Added some basic handling for staffCreateAccount" />
     <MESSAGE value="Cleaned up code" />
-    <option name="LAST_COMMIT_MESSAGE" value="Cleaned up code" />
+    <MESSAGE value="Commented out 'actionPreformed' method" />
+    <MESSAGE value="Added address field" />
+    <MESSAGE value="Replaced new switch statement with old one" />
+    <option name="LAST_COMMIT_MESSAGE" value="Replaced new switch statement with old one" />
   </component>
 </project>
