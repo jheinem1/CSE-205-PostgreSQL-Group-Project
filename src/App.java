@@ -53,7 +53,7 @@ public class App {
         loginFirstScreen.onLoginClick(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                baseFrame.add(customerScreen);
+                baseFrame.add(loginScreen);
                 baseFrame.remove(loginFirstScreen);
                 customerScreen.refreshItems(inventory.getNames().toArray(new String[0]));
                 customerScreen.refreshCartItems(shoppingCart.getNames().toArray(new String[0]));

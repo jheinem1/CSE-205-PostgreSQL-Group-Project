@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e7d3211a-169f-410d-8b55-b0afda4c4f35" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/CustomerScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/CustomerScreen.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,14 +83,7 @@
       <workItem from="1619374360858" duration="7379000" />
       <workItem from="1619394970834" duration="17656000" />
       <workItem from="1619493382884" duration="357000" />
-      <workItem from="1619493757591" duration="10852000" />
-    </task>
-    <task id="LOCAL-00008" summary="Fixed comma issues">
-      <created>1619378446803</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1619378446803</updated>
+      <workItem from="1619493757591" duration="10957000" />
     </task>
     <task id="LOCAL-00009" summary="Added some helpful comments">
       <created>1619378488391</created>
@@ -430,7 +421,14 @@
       <option name="project" value="LOCAL" />
       <updated>1619502936823</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="Fixed customer screen">
+      <created>1619504758722</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1619504758722</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -449,7 +447,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added address field" />
     <MESSAGE value="Replaced new switch statement with old one" />
     <MESSAGE value="Implemented processing screen with class" />
     <MESSAGE value="Made ItemHolder hashmap use serialized values" />
@@ -474,6 +471,7 @@
     <MESSAGE value="Fixed constructor doing redundant things" />
     <MESSAGE value="added temporary inventory filler" />
     <MESSAGE value="added validate to everything" />
-    <option name="LAST_COMMIT_MESSAGE" value="added validate to everything" />
+    <MESSAGE value="Fixed customer screen" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed customer screen" />
   </component>
 </project>
