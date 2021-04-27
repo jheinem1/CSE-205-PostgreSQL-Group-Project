@@ -424,6 +424,36 @@ public class App {
             }
         });
 
+        employeeAccountScreen.onLogoutClick(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+            	 baseFrame.add(loginFirstScreen);
+                 baseFrame.remove(employeeAccountScreen);
+                 baseFrame.getContentPane().validate();
+                 baseFrame.getContentPane().repaint();
+            }
+           });
+        
+        employeeAccountScreen.onProcessingClick(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+            	 baseFrame.add(processingScreen);
+                 baseFrame.remove(employeeAccountScreen);
+                 baseFrame.getContentPane().validate();
+                 baseFrame.getContentPane().repaint();
+            }
+           });
+        
+        employeeAccountScreen.onStoreClick(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+            	 baseFrame.add(empScreen);
+                 baseFrame.remove(employeeAccountScreen);
+                 baseFrame.getContentPane().validate();
+                 baseFrame.getContentPane().repaint();
+            }
+           });
+        
         //base.close();
 
     }
