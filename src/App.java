@@ -33,6 +33,7 @@ public class App {
         DbConnections base = new DbConnections();
         Connection connection = base.getConnection();
         var processing = new Processing();
+        var shoppingCart = new ShoppingCart();
 
         //COMMENT THIS OUT THE SECOND TIME YOU RUN THIS PROGRAM
         // base.createTable(connection, DbConnections.generateCreateCommand("USERS", "ID INT PRIMARY KEY NOT NULL, ENCODEDPERSON TEXT NOT NULL, USERNAME TEXT NOT NULL"));
@@ -419,6 +420,37 @@ public class App {
             public void actionPerformed(ActionEvent e) {
                 baseFrame.add(checkout);
                 baseFrame.remove(customerScreen);
+                baseFrame.getContentPane().validate();
+                baseFrame.getContentPane().repaint();
+            }
+        });
+
+        checkout.onCancelClick(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                baseFrame.add(loginFirstScreen);
+                baseFrame.remove(checkout);
+                baseFrame.getContentPane().validate();
+                baseFrame.getContentPane().repaint();
+            }
+        });
+        checkout.onCheckoutClick(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                for (var item : shoppingCart.getValues())
+                    processing.addItem(item);
+                shoppingCart.clear();
+                baseFrame.add(customerScreen);
+                baseFrame.remove(checkout);
+                baseFrame.getContentPane().validate();
+                baseFrame.getContentPane().repaint();
+            }
+        });
+        checkout.onLogoutClick(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                baseFrame.add(loginFirstScreen);
+                baseFrame.remove(checkout);
                 baseFrame.getContentPane().validate();
                 baseFrame.getContentPane().repaint();
             }

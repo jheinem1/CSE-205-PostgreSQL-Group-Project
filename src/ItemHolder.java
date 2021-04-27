@@ -4,19 +4,44 @@ import java.util.Set;
 
 public abstract class ItemHolder {
 
-    private final HashMap<String, String> itemMap = new HashMap<String, String>();
+    private final HashMap<String, String> itemMap;
 
-    public Item getItemByName(String name) {
-        return Serializer.deserializeItemObject(itemMap.get(name));
+    public ItemHolder() {
+        itemMap = new HashMap<String, String>();
     }
 
-    public ItemHolder pushItem(Item item) {
-        itemMap.put(item.getName(), Serializer.serialize(item));
+    public ItemHolder(HashMap<String, String> itemMap) {
+        this.itemMap = itemMap;
+    }
+
+    public ItemHolder clear() {
+        itemMap.clear();
+        return this;
+    }
+
+    public Item getItemByName(String name) {
+        return itemMap.get(name) == null ? null : Serializer.deserializeItemObject(itemMap.get(name));
+    }
+
+    public ItemHolder addItem(Item item) {
+        if (getItemByName(item.getName()) == null)
+            itemMap.put(item.getName(), Serializer.serialize(item));
+        else
+            updateItem(item.getName(), item.getPrice(), getItemByName(item.getName()).getQuantity() + item.getQuantity());
         return this;
     }
 
     public Item removeItem(String name) {
         return Serializer.deserializeItemObject(itemMap.remove(name));
+    }
+
+    public Item removeItem(String name, int quantity) {
+        var item = getItemByName(name);
+        if (item.getQuantity() - quantity > 0) {
+            updateItem(name, item.getPrice(), item.getQuantity() - quantity);
+            return item;
+        } else
+            return Serializer.deserializeItemObject(itemMap.remove(name));
     }
 
     public Item[] removeItems(String[] names) {
@@ -27,9 +52,17 @@ public abstract class ItemHolder {
         return out;
     }
 
+    public Item[] removeItems(String[] names, int quantity) {
+        var out = new Item[names.length];
+        var i = 0;
+        for (var name : names)
+            out[i++] = removeItem(name, quantity);
+        return out;
+    }
+
     public ItemHolder updateItem(String name, double price, int quantity) {
         if (getItemByName(name) != null)
-            pushItem(new Item(name, price, quantity));
+            itemMap.put(name, Serializer.serialize(new Item(name, price, quantity)));
         return this;
     }
 
