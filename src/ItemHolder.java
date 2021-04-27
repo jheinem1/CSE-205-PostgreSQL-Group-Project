@@ -31,6 +31,12 @@ public abstract class ItemHolder {
         return this;
     }
 
+    public ItemHolder addItems(Item[] items) {
+        for (var item : items)
+            addItem(item);
+        return this;
+    }
+
     public Item removeItem(String name) {
         return Serializer.deserializeItemObject(itemMap.remove(name));
     }
