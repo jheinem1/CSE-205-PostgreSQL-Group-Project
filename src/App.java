@@ -39,6 +39,10 @@ public class App {
         var processing = new Processing();
         var shoppingCart = new ShoppingCart();
 
+        //TEMPORARY (please god delete after this is so bad)
+        var items = new Item[] {new Item("Milk", 5.99, 16), new Item("Eggs", 4.65, 500), new Item("Bread", 7.00, 50), new Item("Chicken", 8.99, 40)};
+        inventory.addItems(items);
+
         //COMMENT THIS OUT THE SECOND TIME YOU RUN THIS PROGRAM
         // base.createTable(connection, DbConnections.generateCreateCommand("USERS", "ID INT PRIMARY KEY NOT NULL, ENCODEDPERSON TEXT NOT NULL, USERNAME TEXT NOT NULL"));
        /* base.createTable(connection, DbConnections.generateCreateCommand("LASTID", "ID INT PRIMARY KEY NOT NULL"));
