@@ -269,6 +269,39 @@ public class DbConnections {
         return "Cart with ID " +  custID + "not found";
     }
     
+    public static int selectLastIDCommand(Connection connection, String table)
+    {
+
+        Statement statement = null;
+        try{
+            statement = connection.createStatement();
+            String sqlCommand = "Select * FROM " + table + ";";
+            
+            ResultSet resultSet = statement.executeQuery(sqlCommand);
+            int id = -1;
+           
+            while(resultSet.next()){
+                id = resultSet.getInt("ID");
+            }
+                
+            
+            resultSet.close();
+            statement.close();
+            System.out.println("Data Selected...");
+            return id;
+            
+            
+        } catch (SQLException e) {
+            e.printStackTrace();
+            System.exit(0);
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.err.println("Catch all Exception occurred: "+e.getClass().getName()+": "+e.getMessage());
+            System.exit(0);
+        }
+        return -1;
+    }
+    
     public static String selectLoginCommand(Connection connection, String table, String toFindUsername)
     {
 

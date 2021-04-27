@@ -13,6 +13,7 @@ public class Person {
 	private String password;
 	
 	private static int lastID;
+	private static DbConnections base = new DbConnections();
 	
 	
 	
@@ -25,8 +26,12 @@ public class Person {
 		if (isValidCharacters(address)) { this.address = address; } 
 		if (isValidCharacters(emailAddress)) { this.emailAddress = emailAddress; } 
 		if (isValidCharacters(position.toLowerCase())) { this.position = position.toLowerCase(); }
-		ID = lastID + 1;
+		
+		int prevID = base.selectLastIDCommand(base.getConnection(), "LASTID");
+		ID = prevID + 1;
 		lastID += 1;
+		base.updateCommand(base.getConnection(), DbConnections.generateUpdateCommand("LASTID", "ID", prevID + 1 + ""), "LASTID");
+		
 		if (isValidCharacters(username)) { this.username = username; }
 		if (isValidCharacters(password)) { this.password = password; }
 	}
