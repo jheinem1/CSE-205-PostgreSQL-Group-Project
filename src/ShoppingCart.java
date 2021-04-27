@@ -42,4 +42,8 @@ public class ShoppingCart extends ItemHolder
             cost += item.getPrice();
         return cost;
     }
+
+    public String encode() {
+        return Serializer.serialize(getValues());
+    }
 }

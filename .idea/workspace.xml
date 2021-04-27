@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e7d3211a-169f-410d-8b55-b0afda4c4f35" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ShoppingCart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ShoppingCart.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,14 +83,7 @@
       <workItem from="1619374360858" duration="7379000" />
       <workItem from="1619394970834" duration="17656000" />
       <workItem from="1619493382884" duration="357000" />
-      <workItem from="1619493757591" duration="5834000" />
-    </task>
-    <task id="LOCAL-00001" summary="Made some changes so the project could build">
-      <created>1619337685056</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1619337685056</updated>
+      <workItem from="1619493757591" duration="6077000" />
     </task>
     <task id="LOCAL-00002" summary="Implemented proof-of-concept GUI">
       <created>1619337707490</created>
@@ -429,7 +421,14 @@
       <option name="project" value="LOCAL" />
       <updated>1619499373051</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="Uncommented checkout methods">
+      <created>1619499663039</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1619499663039</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -448,7 +447,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added handling of screen switcher for processing screen" />
     <MESSAGE value="Implemented methods for CustomerScreen" />
     <MESSAGE value="Added clearAllCartItems for yknow clearing all items from the cart" />
     <MESSAGE value="Implemented additional cart-related methods" />
@@ -473,6 +471,7 @@
     <MESSAGE value="Finished (ish) customerScreen" />
     <MESSAGE value="Finished (ish) employee screen" />
     <MESSAGE value="Refresh on opening item-related things" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refresh on opening item-related things" />
+    <MESSAGE value="Uncommented checkout methods" />
+    <option name="LAST_COMMIT_MESSAGE" value="Uncommented checkout methods" />
   </component>
 </project>
