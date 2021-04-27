@@ -429,7 +429,7 @@ public class App {
                 customerScreen.refreshCartItems(shoppingCart.getNames().toArray(new String[0]));
             }
         });
-       /* customerScreen.onCheckoutClick(new ActionListener() {
+       customerScreen.onCheckoutClick(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 baseFrame.add(checkout);
@@ -440,7 +440,7 @@ public class App {
                 baseFrame.getContentPane().validate();
                 baseFrame.getContentPane().repaint();
             }
-        });*/
+        });
 
         checkout.onCancelClick(new ActionListener() {
             @Override
@@ -451,7 +451,8 @@ public class App {
                 baseFrame.getContentPane().repaint();
             }
         });
-        /*checkout.onCheckoutClick(new ActionListener() {
+
+        checkout.onCheckoutClick(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 for (var item : shoppingCart.getValues())
@@ -462,7 +463,7 @@ public class App {
                 baseFrame.getContentPane().validate();
                 baseFrame.getContentPane().repaint();
             }
-        });*/
+        });
         checkout.onLogoutClick(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {

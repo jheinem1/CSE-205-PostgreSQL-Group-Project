@@ -84,7 +84,7 @@
       <workItem from="1619374360858" duration="7379000" />
       <workItem from="1619394970834" duration="17656000" />
       <workItem from="1619493382884" duration="357000" />
-      <workItem from="1619493757591" duration="5525000" />
+      <workItem from="1619493757591" duration="5834000" />
     </task>
     <task id="LOCAL-00001" summary="Made some changes so the project could build">
       <created>1619337685056</created>
@@ -422,7 +422,14 @@
       <option name="project" value="LOCAL" />
       <updated>1619499111471</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="Refresh on opening item-related things">
+      <created>1619499373051</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1619499373051</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -441,7 +448,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added new processing and accounts button to EmployeeScreen, EmployeeAccountScreen, and ProcessingScreen" />
     <MESSAGE value="Added handling of screen switcher for processing screen" />
     <MESSAGE value="Implemented methods for CustomerScreen" />
     <MESSAGE value="Added clearAllCartItems for yknow clearing all items from the cart" />
@@ -466,6 +472,7 @@
     <MESSAGE value="Updated inventory and itemholder to use new standard" />
     <MESSAGE value="Finished (ish) customerScreen" />
     <MESSAGE value="Finished (ish) employee screen" />
-    <option name="LAST_COMMIT_MESSAGE" value="Finished (ish) employee screen" />
+    <MESSAGE value="Refresh on opening item-related things" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refresh on opening item-related things" />
   </component>
 </project>
