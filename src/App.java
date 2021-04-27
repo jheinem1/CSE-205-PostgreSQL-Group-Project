@@ -8,6 +8,9 @@ import java.sql.Connection;
 import java.util.LinkedHashMap;
 
 public class App {
+	
+	private static String[] toDeleteUsernames;
+	
     public static void main(String[] args) throws Exception {
         var baseFrame = new JFrame();
         baseFrame.setMaximumSize(new java.awt.Dimension(1000, 500));
@@ -153,7 +156,7 @@ public class App {
         deleteAccount.onCancelClick(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                baseFrame.add(empScreen);
+                baseFrame.add(employeeAccountScreen);
                 baseFrame.remove(deleteAccount);
                 baseFrame.getContentPane().validate();
                 baseFrame.getContentPane().repaint();
@@ -162,8 +165,12 @@ public class App {
         deleteAccount.onDeleteClick(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                //TODO: add delete account functionality
-                baseFrame.add(empScreen);
+               
+            	for (String username : toDeleteUsernames) {
+            		base.deleteCommand(connection, DbConnections.generateDeleteCommand("USERS", "USERNAME = " + username));
+            	}
+            	
+                baseFrame.add(employeeAccountScreen);
                 baseFrame.remove(deleteAccount);
                 baseFrame.getContentPane().validate();
                 baseFrame.getContentPane().repaint();
@@ -415,7 +422,7 @@ public class App {
                 //TODO implement
             }
         });
-        customerScreen.onCheckoutClick(new ActionListener() {
+       /* customerScreen.onCheckoutClick(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 baseFrame.add(checkout);
@@ -426,7 +433,7 @@ public class App {
                 baseFrame.getContentPane().validate();
                 baseFrame.getContentPane().repaint();
             }
-        });
+        });*/
 
         checkout.onCancelClick(new ActionListener() {
             @Override
@@ -437,7 +444,7 @@ public class App {
                 baseFrame.getContentPane().repaint();
             }
         });
-        checkout.onCheckoutClick(new ActionListener() {
+        /*checkout.onCheckoutClick(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 for (var item : shoppingCart.getValues())
@@ -448,7 +455,7 @@ public class App {
                 baseFrame.getContentPane().validate();
                 baseFrame.getContentPane().repaint();
             }
-        });
+        });*/
         checkout.onLogoutClick(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -489,6 +496,18 @@ public class App {
             }
            });
 
+
+        employeeAccountScreen.onDeleteClick(new ActionListener() {
+                  @Override
+                  public void actionPerformed(ActionEvent e) {
+                  	 toDeleteUsernames = employeeAccountScreen.getSelectedAccounts();
+                  	 baseFrame.add(deleteAccount);
+                       baseFrame.remove(employeeAccountScreen);
+                       baseFrame.getContentPane().validate();
+                       baseFrame.getContentPane().repaint();
+                  }
+                 });
+        
         //base.close();
 
     }
