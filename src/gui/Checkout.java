@@ -5,6 +5,7 @@
  */
 package gui;
 
+import javax.swing.*;
 import java.awt.event.ActionListener;
 
 /**
@@ -138,5 +139,21 @@ public class Checkout extends javax.swing.JPanel {
 
     public void onCheckoutClick(ActionListener listener) {
         jButton2.addActionListener(listener);
+    }
+
+    public void setCartTotal(double amt) {
+        jLabel1.setText(String.format("Shopping Cart | Total: $%.2f", amt));
+    }
+
+    public void addItemToCart(String name) {
+        var item = new JCheckBox(name);
+        item.setBackground(new java.awt.Color(180, 180, 181));
+        item.setFont(new java.awt.Font("sansserif", 1, 18)); // NOI18N
+        item.setForeground(new java.awt.Color(0, 0, 0));
+        jScrollPane1.setViewportView(item);
+    }
+
+    public void clearAllCartItems() {
+        jScrollPane1.removeAll();
     }
 }
