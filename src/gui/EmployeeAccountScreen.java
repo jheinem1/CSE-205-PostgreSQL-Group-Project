@@ -366,13 +366,13 @@ public class EmployeeAccountScreen extends javax.swing.JPanel {
     
     public void actionPreformed(ActionEvent e){
         if(e.getSource()==jbutton1){
-            //add
+            //Create Account connects to database
         }
         if(e.getSource()==jbutton2){
-            //update
+            //Update Account connects to database
         }
         if(e.getSource()==jbutton3){
-            //delete
+            //Delete Account connects to database
         }
     }
 }
