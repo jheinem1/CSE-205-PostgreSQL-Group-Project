@@ -8,6 +8,7 @@ package gui;
 import javax.swing.*;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 /**
  *
@@ -37,9 +38,9 @@ public class CustomerScreen extends javax.swing.JPanel {
         jButton1 = new javax.swing.JButton();
         jTextField5 = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jCheckBox2 = new javax.swing.JCheckBox();
+        jPanel3 = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jCheckBox1 = new javax.swing.JCheckBox();
+        jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jButton5 = new javax.swing.JButton();
@@ -94,17 +95,11 @@ public class CustomerScreen extends javax.swing.JPanel {
             }
         });
 
-        jCheckBox2.setBackground(new java.awt.Color(180, 180, 181));
-        jCheckBox2.setFont(new java.awt.Font("sansserif", 1, 18)); // NOI18N
-        jCheckBox2.setForeground(new java.awt.Color(0, 0, 0));
-        jCheckBox2.setText("ItemTemplate");
-        jScrollPane1.setViewportView(jCheckBox2);
+        jPanel3.setLayout(new java.awt.GridLayout(0, 1));
+        jScrollPane1.setViewportView(jPanel3);
 
-        jCheckBox1.setBackground(new java.awt.Color(180, 180, 181));
-        jCheckBox1.setFont(new java.awt.Font("sansserif", 1, 18)); // NOI18N
-        jCheckBox1.setForeground(new java.awt.Color(0, 0, 0));
-        jCheckBox1.setText("ItemTemplate");
-        jScrollPane3.setViewportView(jCheckBox1);
+        jPanel2.setLayout(new java.awt.GridLayout(0, 1));
+        jScrollPane3.setViewportView(jPanel2);
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
         jLabel1.setFont(new java.awt.Font("sansserif", 1, 18)); // NOI18N
@@ -153,18 +148,17 @@ public class CustomerScreen extends javax.swing.JPanel {
                                         .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(layout.createSequentialGroup()
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                        .addComponent(jScrollPane1)
-                                                        .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 401, Short.MAX_VALUE))
-                                                .addContainerGap())
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                .addComponent(jScrollPane1)
+                                                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 401, Short.MAX_VALUE))
                                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addGap(18, 18, 18)
                                                 .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addGap(18, 18, 18)
                                                 .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addGap(160, 160, 160))))
+                                                .addGap(192, 192, 192)))
+                                .addContainerGap())
         );
     }// </editor-fold>
 
@@ -178,11 +172,11 @@ public class CustomerScreen extends javax.swing.JPanel {
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
-    private javax.swing.JCheckBox jCheckBox1;
-    private javax.swing.JCheckBox jCheckBox2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTextField jTextField5;
@@ -214,27 +208,27 @@ public class CustomerScreen extends javax.swing.JPanel {
     }
 
     public void clearAllItems() {
-        jScrollPane3.removeAll();
+        jPanel2.removeAll();
     }
 
     public void clearAllCartItems() {
-        jScrollPane1.removeAll();
+        jPanel3.removeAll();
     }
 
     public void addItem(String name) {
         var item = new JCheckBox(name);
         item.setBackground(new java.awt.Color(180, 180, 181));
-        item.setFont(new java.awt.Font("sansserif", 1, 18)); // NOI18N
+        item.setFont(new java.awt.Font("sanserif", 1, 18)); // NOI18N
         item.setForeground(new java.awt.Color(0, 0, 0));
-        jScrollPane3.setViewportView(item);
+        jPanel2.add(item);
     }
 
     public void addItemToCart(String name) {
         var item = new JCheckBox(name);
         item.setBackground(new java.awt.Color(180, 180, 181));
-        item.setFont(new java.awt.Font("sansserif", 1, 18)); // NOI18N
+        item.setFont(new java.awt.Font("sanserif", 1, 18)); // NOI18N
         item.setForeground(new java.awt.Color(0, 0, 0));
-        jScrollPane1.setViewportView(item);
+        jPanel3.add(item);
     }
 
     public void setCartTotal(double amt) {
@@ -243,16 +237,19 @@ public class CustomerScreen extends javax.swing.JPanel {
 
     public String[] getSelectedItems() {
         var selected = new ArrayList<String>();
-        for (var component : jScrollPane3.getComponents()) /*or jScrollPane3.getViewport().getComponents() not 100% sure*/
-            if (component.getClass().getName().equals("JCheckBox") && ((JCheckBox) component).isSelected())
+        for (var component : jPanel2.getComponents()) /*or jScrollPane3.getViewport().getComponents() not 100% sure*/ {
+            System.out.println(component);
+            if (component instanceof JCheckBox && ((JCheckBox) component).isSelected())
                 selected.add(((JCheckBox) component).getText());
+        }
+
         return selected.toArray(new String[0]);
     }
 
     public String[] getSelectedCartItems() {
         var selected = new ArrayList<String>();
-        for (var component : jScrollPane1.getComponents()) /*or jScrollPane3.getViewport().getComponents() not 100% sure*/
-            if (component.getClass().getName().equals("JCheckBox") && ((JCheckBox) component).isSelected())
+        for (var component : jPanel3.getComponents()) /*or jScrollPane3.getViewport().getComponents() not 100% sure*/
+            if (component instanceof JCheckBox && ((JCheckBox) component).isSelected())
                 selected.add(((JCheckBox) component).getText());
         return selected.toArray(new String[0]);
     }
