@@ -224,11 +224,11 @@ public class StaffCreateAccount extends javax.swing.JPanel {
     // End of variables declaration//GEN-END:variables
 
     public void onLoginClick(ActionListener listener) {
-        jButton1.addActionListener(listener);
+        jButton3.addActionListener(listener);
     }
 
     public void onCancelClick(ActionListener listener) {
-        jButton3.addActionListener(listener);
+        jButton1.addActionListener(listener);
     }
 
     public void onCreateClick(ActionListener listener) {
