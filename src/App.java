@@ -245,13 +245,15 @@ public class App {
         empScreen.onUpdateClick(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                // TODO Auto-generated method stub
+                inventory.updateItems(empScreen.getSelectedItems(), Double.parseDouble(empScreen.getField("price")), Integer.parseInt(empScreen.getField("quantity")));
+                empScreen.refreshItems(inventory.getNames().toArray(new String[0]));
             }
         });
         empScreen.onDeleteClick(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                // TODO Auto-generated method stub
+                inventory.removeItems(empScreen.getSelectedItems(), Integer.parseInt(empScreen.getField("quantity")));
+                empScreen.refreshItems(inventory.getNames().toArray(new String[0]));
             }
         });
 
