@@ -31,6 +31,7 @@ public class App {
 
         DbConnections base = new DbConnections();
         Connection connection = base.getConnection();
+        var processing = new Processing();
 
         //COMMENT THIS OUT THE SECOND TIME YOU RUN THIS PROGRAM
         // base.createTable(connection, DbConnections.generateCreateCommand("USERS", "ID INT PRIMARY KEY NOT NULL, ENCODEDPERSON TEXT NOT NULL, USERNAME TEXT NOT NULL"));
@@ -179,13 +180,15 @@ public class App {
         processingScreen.onUpdateClick(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                //TODO: implement item updating
+                processing.updateItems(processingScreen.getSelectedItems(), Double.parseDouble(processingScreen.getField("price")), Integer.parseInt(processingScreen.getField("quantity")));
+                processingScreen.refreshItems(processing.getNames().toArray(new String[0]));
             }
         });
         processingScreen.onDeleteClick(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                //TODO: implement item deletion
+                processing.removeItems(processingScreen.getSelectedItems());
+                processingScreen.refreshItems(processing.getNames().toArray(new String[0]));
             }
         });
         processingScreen.onLogoutClick(new ActionListener() {
@@ -200,7 +203,8 @@ public class App {
         processingScreen.onShipClick(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                //TODO: implement item "shipping" (just delete 🙃)
+                processing.shipItems(processingScreen.getSelectedItems());
+                processingScreen.refreshItems(processing.getNames().toArray(new String[0]));
             }
         });
         processingScreen.onAccountsClick(new ActionListener() {

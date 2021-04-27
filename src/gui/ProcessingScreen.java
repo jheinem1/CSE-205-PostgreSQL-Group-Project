@@ -286,4 +286,10 @@ public class ProcessingScreen extends javax.swing.JPanel {
                 selected.add(((JCheckBox) component).getText());
         return selected.toArray(new String[0]);
     }
+
+    public void refreshItems(String[] names) {
+        clearAllItems();
+        for (var name : names)
+            addItem(name);
+    }
 }
