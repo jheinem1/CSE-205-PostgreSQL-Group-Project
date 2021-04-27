@@ -363,4 +363,16 @@ public class EmployeeAccountScreen extends javax.swing.JPanel {
                 selected.add(((JCheckBox) component).getText());
         return selected.toArray(new String[0]);
     }
+    
+    public void actionPreformed(ActionEvent e){
+        if(e.getSource()==jbutton1){
+            //add
+        }
+        if(e.getSource()==jbutton2){
+            //update
+        }
+        if(e.getSource()==jbutton3){
+            //delete
+        }
+    }
 }
