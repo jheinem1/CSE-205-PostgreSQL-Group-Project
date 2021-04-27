@@ -198,6 +198,8 @@ public class App {
             public void actionPerformed(ActionEvent e) {
                 processing.updateItems(processingScreen.getSelectedItems(), Double.parseDouble(processingScreen.getField("price")), Integer.parseInt(processingScreen.getField("quantity")));
                 processingScreen.refreshItems(processing.getNames().toArray(new String[0]));
+                baseFrame.getContentPane().validate();
+                baseFrame.getContentPane().repaint();
             }
         });
         processingScreen.onDeleteClick(new ActionListener() {
@@ -205,6 +207,8 @@ public class App {
             public void actionPerformed(ActionEvent e) {
                 processing.removeItems(processingScreen.getSelectedItems(), Integer.parseInt(processingScreen.getField("quantity")));
                 processingScreen.refreshItems(processing.getNames().toArray(new String[0]));
+                baseFrame.getContentPane().validate();
+                baseFrame.getContentPane().repaint();
             }
         });
         processingScreen.onLogoutClick(new ActionListener() {
@@ -221,6 +225,8 @@ public class App {
             public void actionPerformed(ActionEvent e) {
                 processing.shipItems(processingScreen.getSelectedItems(), Integer.parseInt(processingScreen.getField("quantity")));
                 processingScreen.refreshItems(processing.getNames().toArray(new String[0]));
+                baseFrame.getContentPane().validate();
+                baseFrame.getContentPane().repaint();
             }
         });
         processingScreen.onAccountsClick(new ActionListener() {
@@ -254,6 +260,8 @@ public class App {
             public void actionPerformed(ActionEvent e) {
                 inventory.updateItems(empScreen.getSelectedItems(), Double.parseDouble(empScreen.getField("price")), Integer.parseInt(empScreen.getField("quantity")));
                 empScreen.refreshItems(inventory.getNames().toArray(new String[0]));
+                baseFrame.getContentPane().validate();
+                baseFrame.getContentPane().repaint();
             }
         });
         empScreen.onDeleteClick(new ActionListener() {
@@ -261,6 +269,8 @@ public class App {
             public void actionPerformed(ActionEvent e) {
                 inventory.removeItems(empScreen.getSelectedItems(), Integer.parseInt(empScreen.getField("quantity")));
                 empScreen.refreshItems(inventory.getNames().toArray(new String[0]));
+                baseFrame.getContentPane().validate();
+                baseFrame.getContentPane().repaint();
             }
         });
 
@@ -424,6 +434,8 @@ public class App {
                 shoppingCart.addItems(inventory.removeItems(customerScreen.getSelectedItems(), Integer.parseInt(customerScreen.getField("quantity"))));
                 customerScreen.refreshItems(inventory.getNames().toArray(new String[0]));
                 customerScreen.refreshCartItems(shoppingCart.getNames().toArray(new String[0]));
+                baseFrame.getContentPane().validate();
+                baseFrame.getContentPane().repaint();
             }
         });
         customerScreen.onDeleteClick(new ActionListener() {
@@ -431,6 +443,8 @@ public class App {
             public void actionPerformed(ActionEvent e) {
                 shoppingCart.removeItems(customerScreen.getSelectedCartItems(), Integer.parseInt(customerScreen.getField("quantity")));
                 customerScreen.refreshCartItems(shoppingCart.getNames().toArray(new String[0]));
+                baseFrame.getContentPane().validate();
+                baseFrame.getContentPane().repaint();
             }
         });
        customerScreen.onCheckoutClick(new ActionListener() {
