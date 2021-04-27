@@ -199,7 +199,7 @@ public class App {
         processingScreen.onDeleteClick(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                processing.removeItems(processingScreen.getSelectedItems());
+                processing.removeItems(processingScreen.getSelectedItems(), Integer.parseInt(processingScreen.getField("quantity")));
                 processingScreen.refreshItems(processing.getNames().toArray(new String[0]));
             }
         });
@@ -215,7 +215,7 @@ public class App {
         processingScreen.onShipClick(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                processing.shipItems(processingScreen.getSelectedItems());
+                processing.shipItems(processingScreen.getSelectedItems(), Integer.parseInt(processingScreen.getField("quantity")));
                 processingScreen.refreshItems(processing.getNames().toArray(new String[0]));
             }
         });

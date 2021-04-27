@@ -1,11 +1,11 @@
 public class Processing extends ItemHolder {
-    public Processing shipItem(String name) {
-        removeItem(name);
+    public Processing shipItem(String name, int quantity) {
+        removeItem(name, quantity);
         return this;
     }
 
-    public Processing shipItems(String[] names) {
-        removeItems(names);
+    public Processing shipItems(String[] names, int quantity) {
+        removeItems(names, quantity);
         return this;
     }
 
