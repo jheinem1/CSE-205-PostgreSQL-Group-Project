@@ -220,33 +220,52 @@ public class App {
                 baseFrame.getContentPane().repaint();
             }
         });
+	    
+	empScreen.onAddClick(new ActionListener() {
+		@Override
+		public void actionPerformed(ActionEvent e) {
+				
+		}      	
+        });       
+        empScreen.onUpdateClick(new ActionListener() {
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			// TODO Auto-generated method stub						
+		}        	
+        });        
+        empScreen.onDeleteClick(new ActionListener() {
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			// TODO Auto-generated method stub							
+		}       	
+        });
         
         empScreen.onLogoutClick(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				baseFrame.add(loginScreen);
-				baseFrame.remove(empScreen);
-				baseFrame.getContentPane().validate();
-                baseFrame.getContentPane().repaint();				
-			}    	
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			baseFrame.add(loginScreen);
+			baseFrame.remove(empScreen);
+			baseFrame.getContentPane().validate();
+               		baseFrame.getContentPane().repaint();				
+		}    	
         });
         empScreen.onProcessingClick(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				baseFrame.add(processingScreen);
-				baseFrame.remove(empScreen);
-				baseFrame.getContentPane().validate();
-                baseFrame.getContentPane().repaint();				
-			}       	
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			baseFrame.add(processingScreen);
+			baseFrame.remove(empScreen);
+			baseFrame.getContentPane().validate();
+                	baseFrame.getContentPane().repaint();				
+		}       	
         });
         empScreen.onAccountsClick(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				baseFrame.add(employeeAccountScreen);
-				baseFrame.remove(empScreen);
-				baseFrame.getContentPane().validate();
-                baseFrame.getContentPane().repaint();				
-			}       	
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			baseFrame.add(employeeAccountScreen);
+			baseFrame.remove(empScreen);
+			baseFrame.getContentPane().validate();
+                	baseFrame.getContentPane().repaint();				
+		}       	
         });
         
      base.close();   
