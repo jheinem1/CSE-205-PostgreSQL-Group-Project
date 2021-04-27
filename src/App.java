@@ -27,12 +27,12 @@ public class App {
 
         baseFrame.add(loginFirstScreen);
         baseFrame.setVisible(true);
-        
+
         DbConnections base = new DbConnections();
         Connection connection = base.getConnection();
-        
+
         //COMMENT THIS OUT THE SECOND TIME YOU RUN THIS PROGRAM
-       // base.createTable(connection, DbConnections.generateCreateCommand("USERS", "ID INT PRIMARY KEY NOT NULL, ENCODEDPERSON TEXT NOT NULL, USERNAME TEXT NOT NULL"));
+        // base.createTable(connection, DbConnections.generateCreateCommand("USERS", "ID INT PRIMARY KEY NOT NULL, ENCODEDPERSON TEXT NOT NULL, USERNAME TEXT NOT NULL"));
 
         loginFirstScreen.onLoginClick(new ActionListener() {
             @Override
@@ -80,7 +80,7 @@ public class App {
                 baseFrame.getContentPane().repaint();
             }
         });
-     
+
         loginScreen.onCreateClick(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -90,7 +90,7 @@ public class App {
                 baseFrame.getContentPane().repaint();
             }
         });
-     
+
         loginScreen.onLoginClick(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -102,48 +102,44 @@ public class App {
             	toInsert.put("USERNAME", "Username");
         		//base.insertCommand(connection, DbConnections.generateInsertCommand(toInsert, "USERS"));
             	*/
-            	
-            	System.out.println(loginScreen.getField("username"));
-            	
-            	String personCoded = base.selectLoginCommand(base.getConnection(), "USERS", loginScreen.getField("username"));
-            	System.out.println("Serialized Person: " + personCoded + "\n");
-            	if (personCoded.equals("Could not find person with username " +  loginScreen.getField("username"))) {
-            		System.out.println("Incorrect username. Try again :P");
-            		return;
-            	}
-            	Person user = Serializer.deserializePersonObject(personCoded);
-            	System.out.println("beg");
-            	if (user.getPassword().equals(loginScreen.getField("password")) ) {
-            		if (user.getPosition().equals("customer")) {
-            		      baseFrame.add(customerScreen);
-                          baseFrame.remove(loginScreen);
-                          baseFrame.getContentPane().validate();
-                          baseFrame.getContentPane().repaint();
-                          System.out.println("cus");
-            		}
-            		else if (user.getPosition().equals("employee")) {
-            		      baseFrame.add(empScreen);
-                          baseFrame.remove(loginScreen);
-                          baseFrame.getContentPane().validate();
-                          baseFrame.getContentPane().repaint();
-                          System.out.println("emp");
-            		}
-            		else if (user.getPosition().equals("manager")) {
-            		      baseFrame.add(empScreen);
-                          baseFrame.remove(loginScreen);
-                          baseFrame.getContentPane().validate();
-                          baseFrame.getContentPane().repaint();
-                          System.out.println("real man");
-            		}
-            		else {
-            			System.out.println("ERROR. Position is NOT C, E, or M for " + user);
-            		}
-            	}
-            	else {
-            		System.out.println("Incorrect username or password");
-            	}
-            	
-          
+
+                System.out.println(loginScreen.getField("username"));
+
+                String personCoded = base.selectLoginCommand(base.getConnection(), "USERS", loginScreen.getField("username"));
+                System.out.println("Serialized Person: " + personCoded + "\n");
+                if (personCoded.equals("Could not find person with username " + loginScreen.getField("username"))) {
+                    System.out.println("Incorrect username. Try again :P");
+                    return;
+                }
+                Person user = Serializer.deserializePersonObject(personCoded);
+                System.out.println("beg");
+                if (user.getPassword().equals(loginScreen.getField("password"))) {
+                    if (user.getPosition().equals("customer")) {
+                        baseFrame.add(customerScreen);
+                        baseFrame.remove(loginScreen);
+                        baseFrame.getContentPane().validate();
+                        baseFrame.getContentPane().repaint();
+                        System.out.println("cus");
+                    } else if (user.getPosition().equals("employee")) {
+                        baseFrame.add(empScreen);
+                        baseFrame.remove(loginScreen);
+                        baseFrame.getContentPane().validate();
+                        baseFrame.getContentPane().repaint();
+                        System.out.println("emp");
+                    } else if (user.getPosition().equals("manager")) {
+                        baseFrame.add(empScreen);
+                        baseFrame.remove(loginScreen);
+                        baseFrame.getContentPane().validate();
+                        baseFrame.getContentPane().repaint();
+                        System.out.println("real man");
+                    } else {
+                        System.out.println("ERROR. Position is NOT C, E, or M for " + user);
+                    }
+                } else {
+                    System.out.println("Incorrect username or password");
+                }
+
+
             }
         });
         deleteAccount.onCancelClick(new ActionListener() {
@@ -220,52 +216,52 @@ public class App {
                 baseFrame.getContentPane().repaint();
             }
         });
-	    
-	empScreen.onAddClick(new ActionListener() {
-		@Override
-		public void actionPerformed(ActionEvent e) {
-				
-		}      	
-        });       
-        empScreen.onUpdateClick(new ActionListener() {
-		@Override
-		public void actionPerformed(ActionEvent e) {
-			// TODO Auto-generated method stub						
-		}        	
-        });        
-        empScreen.onDeleteClick(new ActionListener() {
-		@Override
-		public void actionPerformed(ActionEvent e) {
-			// TODO Auto-generated method stub							
-		}       	
+
+        empScreen.onAddClick(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+            }
         });
-        
+        empScreen.onUpdateClick(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // TODO Auto-generated method stub
+            }
+        });
+        empScreen.onDeleteClick(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // TODO Auto-generated method stub
+            }
+        });
+
         empScreen.onLogoutClick(new ActionListener() {
-		@Override
-		public void actionPerformed(ActionEvent e) {
-			baseFrame.add(loginScreen);
-			baseFrame.remove(empScreen);
-			baseFrame.getContentPane().validate();
-               		baseFrame.getContentPane().repaint();				
-		}    	
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                baseFrame.add(loginScreen);
+                baseFrame.remove(empScreen);
+                baseFrame.getContentPane().validate();
+                baseFrame.getContentPane().repaint();
+            }
         });
         empScreen.onProcessingClick(new ActionListener() {
-		@Override
-		public void actionPerformed(ActionEvent e) {
-			baseFrame.add(processingScreen);
-			baseFrame.remove(empScreen);
-			baseFrame.getContentPane().validate();
-                	baseFrame.getContentPane().repaint();				
-		}       	
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                baseFrame.add(processingScreen);
+                baseFrame.remove(empScreen);
+                baseFrame.getContentPane().validate();
+                baseFrame.getContentPane().repaint();
+            }
         });
         empScreen.onAccountsClick(new ActionListener() {
-		@Override
-		public void actionPerformed(ActionEvent e) {
-			baseFrame.add(employeeAccountScreen);
-			baseFrame.remove(empScreen);
-			baseFrame.getContentPane().validate();
-                	baseFrame.getContentPane().repaint();				
-		}       	
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                baseFrame.add(employeeAccountScreen);
+                baseFrame.remove(empScreen);
+                baseFrame.getContentPane().validate();
+                baseFrame.getContentPane().repaint();
+            }
         });
 
         staffCreateAccount.onCancelClick(new ActionListener() {
@@ -292,9 +288,9 @@ public class App {
                 //TODO: implement staff account creation functionality
             }
         });
-        
-     base.close();   
-        
+
+        base.close();
+
     }
 
 }
