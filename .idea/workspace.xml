@@ -84,7 +84,7 @@
       <workItem from="1619374360858" duration="7379000" />
       <workItem from="1619394970834" duration="17656000" />
       <workItem from="1619493382884" duration="357000" />
-      <workItem from="1619493757591" duration="4211000" />
+      <workItem from="1619493757591" duration="4904000" />
     </task>
     <task id="LOCAL-00001" summary="Made some changes so the project could build">
       <created>1619337685056</created>
@@ -387,7 +387,28 @@
       <option name="project" value="LOCAL" />
       <updated>1619497954943</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="Implemented setCartTotal for checkout">
+      <created>1619498027712</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1619498027712</updated>
+    </task>
+    <task id="LOCAL-00045" summary="Removed update button (redundant)">
+      <created>1619498648824</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1619498648824</updated>
+    </task>
+    <task id="LOCAL-00046" summary="Updated inventory and itemholder to use new standard">
+      <created>1619498692372</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1619498692372</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -406,9 +427,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Implemented buttons (partially) for delete account screen" />
-    <MESSAGE value="Implemented methods for ProcessingScreen" />
-    <MESSAGE value="Added some actionlisteners for processingScreen" />
     <MESSAGE value="Implemented method for EmployeeScreen" />
     <MESSAGE value="removed unnecessary todo" />
     <MESSAGE value="Added new processing and accounts button to EmployeeScreen, EmployeeAccountScreen, and ProcessingScreen" />
@@ -431,6 +449,9 @@
     <MESSAGE value="Added refreshCartItems to checkout" />
     <MESSAGE value="Implemented checkout screen" />
     <MESSAGE value="fixed merge error" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed merge error" />
+    <MESSAGE value="Implemented setCartTotal for checkout" />
+    <MESSAGE value="Removed update button (redundant)" />
+    <MESSAGE value="Updated inventory and itemholder to use new standard" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated inventory and itemholder to use new standard" />
   </component>
 </project>

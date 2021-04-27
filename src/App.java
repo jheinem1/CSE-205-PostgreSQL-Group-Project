@@ -35,6 +35,7 @@ public class App {
 
         DbConnections base = new DbConnections();
         Connection connection = base.getConnection();
+        var inventory = new Inventory();
         var processing = new Processing();
         var shoppingCart = new ShoppingCart();
 
@@ -407,19 +408,16 @@ public class App {
         customerScreen.onAddClick(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                //TODO implement
+                shoppingCart.addItems(inventory.removeItems(customerScreen.getSelectedItems(), Integer.parseInt(customerScreen.getField("quantity"))));
+                customerScreen.refreshItems(inventory.getNames().toArray(new String[0]));
+                customerScreen.refreshCartItems(shoppingCart.getNames().toArray(new String[0]));
             }
         });
         customerScreen.onDeleteClick(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                //TODO implement
-            }
-        });
-        customerScreen.onUpdateClick(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                //TODO implement
+                shoppingCart.removeItems(customerScreen.getSelectedCartItems(), Integer.parseInt(customerScreen.getField("quantity")));
+                customerScreen.refreshCartItems(shoppingCart.getNames().toArray(new String[0]));
             }
         });
        /* customerScreen.onCheckoutClick(new ActionListener() {
