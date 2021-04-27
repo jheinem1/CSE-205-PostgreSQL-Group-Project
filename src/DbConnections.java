@@ -269,6 +269,47 @@ public class DbConnections {
         return "Cart with ID " +  custID + "not found";
     }
     
+    public static String selectLoginCommand(Connection connection, String table, String toFindUsername)
+    {
+
+        Statement statement = null;
+        try{
+            statement = connection.createStatement();
+            String sqlCommand = "Select * FROM " + table + ";";
+            
+            ResultSet resultSet = statement.executeQuery(sqlCommand);
+            int id = -1;
+            String username = "ERROR";
+            String person = "ERROR";
+ 
+            while(resultSet.next()){
+                id = resultSet.getInt("ID");
+                person = resultSet.getString("ENCODEDPERSON");
+                username = resultSet.getString("USERNAME");
+                System.out.println(username);
+                System.out.println("ID: " + id + " Encoded Person: " + person + " Username: " + username); 
+                if (username.equals(toFindUsername)) {
+                	break;
+                }
+            }
+            resultSet.close();
+            statement.close();
+            System.out.println("Data Selected...");
+            if (username.equals(toFindUsername)) {
+            	return person;
+            }
+            
+            
+        } catch (SQLException e) {
+            e.printStackTrace();
+            System.exit(0);
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.err.println("Catch all Exception occurred: "+e.getClass().getName()+": "+e.getMessage());
+            System.exit(0);
+        }
+        return "Could not find person with username " +  toFindUsername;
+    }
     
     public static void selectTestsCommand(Connection connection, String table)
     {
@@ -406,9 +447,6 @@ public class DbConnections {
     	return dictionary;
     	
     }
-
-
-    public String selectLoginCommand(Connection connection, String users, String username) {
-        throw new UnsupportedOperationException("Method not implemented");
-    }
+ 
+    
 }
