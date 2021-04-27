@@ -236,15 +236,22 @@ public class StaffCreateAccount extends javax.swing.JPanel {
     }
 
     public String getField(String field) {
-        return switch (field) {
-            case "firstName" -> jTextField7.getText();
-            case "lastName" -> jTextField5.getText();
-            case "username" -> jTextField9.getText();
-            case "password" -> jTextField8.getText();
-            case "email" -> jTextField6.getText();
-            case "position" -> Objects.requireNonNull(jComboBox1.getSelectedItem()).toString();
-            default -> null;
-        };
+        switch (field) {
+            case "firstName":
+                return jTextField7.getText();
+            case "lastName":
+                return jTextField5.getText();
+            case "username":
+                return jTextField9.getText();
+            case "password":
+                return jTextField8.getText();
+            case "email":
+                return jTextField6.getText();
+            case "position":
+                return Objects.requireNonNull(jComboBox1.getSelectedItem()).toString();
+            default:
+                return null;
+        }
     }
     
 //    public void actionPreformed(ActionEvent e){

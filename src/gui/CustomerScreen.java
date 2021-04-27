@@ -214,10 +214,12 @@ public class CustomerScreen extends javax.swing.JPanel {
     }
 
     public String getField(String field) {
-        return switch (field) {
-            case "quantity" -> jTextField5.getText();
-            default -> null;
-        };
+        switch (field) {
+            case "quantity":
+                return jTextField5.getText();
+            default:
+                return null;
+        }
     }
 
     public void clearAllItems() {

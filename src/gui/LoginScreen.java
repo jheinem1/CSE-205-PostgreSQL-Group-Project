@@ -156,10 +156,13 @@ public class LoginScreen extends javax.swing.JPanel {
     }
 
     public String getField(String field) {
-        return switch (field) {
-            case "username" -> jTextField5.getText();
-            case "password" -> jTextField1.getText();
-            default -> null;
-        };
+        switch (field) {
+            case "username":
+                return jTextField5.getText();
+            case "password":
+                return jTextField1.getText();
+            default:
+                return null;
+        }
     }
 }

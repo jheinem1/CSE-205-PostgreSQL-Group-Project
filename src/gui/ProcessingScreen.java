@@ -255,12 +255,16 @@ public class ProcessingScreen extends javax.swing.JPanel {
     }
 
     public String getField(String field) {
-        return switch (field) {
-            case "name" -> jTextField6.getText();
-            case "date" -> jTextField8.getText();
-            case "quantity" -> jTextField9.getText();
-            default -> null;
-        };
+        switch (field) {
+            case "name":
+                return jTextField6.getText();
+            case "date":
+                return jTextField8.getText();
+            case "quantity":
+                return jTextField9.getText();
+            default:
+                return null;
+        }
     }
 
     public void clearAllItems() {

@@ -344,16 +344,24 @@ public class EmployeeAccountScreen extends javax.swing.JPanel {
     }
 
     public String getField(String field) {
-        return switch (field) {
-            case "id" -> jTextField7.getText();
-            case "type" -> jTextField5.getText();
-            case "username" -> jTextField6.getText();
-            case "password" -> jTextField8.getText();
-            case "firstName" -> jTextField9.getText();
-            case "lastName" -> jTextField10.getText();
-            case "address" -> jTextField1.getText();
-            default -> null;
-        };
+        switch (field) {
+            case "id":
+                return jTextField7.getText();
+            case "type":
+                return jTextField5.getText();
+            case "username":
+                return jTextField6.getText();
+            case "password":
+                return jTextField8.getText();
+            case "firstName":
+                return jTextField9.getText();
+            case "lastName":
+                return jTextField10.getText();
+            case "address":
+                return jTextField1.getText();
+            default:
+                return null;
+        }
     }
 
     public void clearAllAccounts() {
