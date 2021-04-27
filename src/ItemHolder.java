@@ -4,19 +4,19 @@ import java.util.Set;
 
 public abstract class ItemHolder {
 
-    private final HashMap<String, Item> itemMap = new HashMap<String, Item>();
+    private final HashMap<String, String> itemMap = new HashMap<String, String>();
 
     public Item getItemByName(String name) {
-        return itemMap.get(name);
+        return Serializer.deserializeItemObject(itemMap.get(name));
     }
 
     public ItemHolder pushItem(Item item) {
-        itemMap.put(item.getName(), item);
+        itemMap.put(item.getName(), Serializer.serialize(item));
         return this;
     }
 
     public Item removeItem(String name) {
-        return itemMap.remove(name);
+        return Serializer.deserializeItemObject(itemMap.remove(name));
     }
 
     public Item[] removeItems(String[] names) {
@@ -39,15 +39,7 @@ public abstract class ItemHolder {
         return this;
     }
 
-    public Collection<Item> toArray() {
-        return itemMap.values();
-    }
-
     public Set<String> getNames() {
         return itemMap.keySet();
-    }
-
-    protected String encode() {
-        return Serializer.serialize(toArray().toArray(new Item[0]));
     }
 }
