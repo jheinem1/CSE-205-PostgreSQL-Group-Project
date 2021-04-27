@@ -156,4 +156,10 @@ public class Checkout extends javax.swing.JPanel {
     public void clearAllCartItems() {
         jScrollPane1.removeAll();
     }
+
+    public void refreshCartItems(String[] names) {
+        clearAllCartItems();
+        for (var name : names)
+            addItemToCart(name);
+    }
 }
