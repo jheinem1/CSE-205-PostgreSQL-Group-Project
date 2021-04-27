@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="e7d3211a-169f-410d-8b55-b0afda4c4f35" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/Checkout.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/Checkout.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/CustomerScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/CustomerScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,7 +74,7 @@
       <workItem from="1618787439252" duration="487000" />
       <workItem from="1619337088351" duration="1078000" />
       <workItem from="1619374360858" duration="7379000" />
-      <workItem from="1619394970834" duration="13862000" />
+      <workItem from="1619394970834" duration="14340000" />
     </task>
     <task id="LOCAL-00001" summary="Made some changes so the project could build">
       <created>1619337685056</created>
@@ -259,7 +258,21 @@
       <option name="project" value="LOCAL" />
       <updated>1619481597037</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="Implemented additional cart-related methods">
+      <created>1619482749355</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1619482749355</updated>
+    </task>
+    <task id="LOCAL-00028" summary="Implemented additional cart-related methods">
+      <created>1619482858682</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1619482858682</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -278,7 +291,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Made some changes so the project could build" />
     <MESSAGE value="Implemented proof-of-concept GUI" />
     <MESSAGE value="added deserializeItemArrayObject" />
     <MESSAGE value="specified exit on close" />
@@ -303,6 +315,7 @@
     <MESSAGE value="Added handling of screen switcher for processing screen" />
     <MESSAGE value="Implemented methods for CustomerScreen" />
     <MESSAGE value="Added clearAllCartItems for yknow clearing all items from the cart" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added clearAllCartItems for yknow clearing all items from the cart" />
+    <MESSAGE value="Implemented additional cart-related methods" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implemented additional cart-related methods" />
   </component>
 </project>

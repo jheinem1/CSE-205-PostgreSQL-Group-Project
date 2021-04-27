@@ -248,6 +248,31 @@ public class App {
                 baseFrame.getContentPane().repaint();				
 			}       	
         });
+
+        staffCreateAccount.onCancelClick(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                baseFrame.add(loginFirstScreen);
+                baseFrame.remove(staffCreateAccount);
+                baseFrame.getContentPane().validate();
+                baseFrame.getContentPane().repaint();
+            }
+        });
+        staffCreateAccount.onLoginClick(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                baseFrame.add(loginScreen);
+                baseFrame.remove(staffCreateAccount);
+                baseFrame.getContentPane().validate();
+                baseFrame.getContentPane().repaint();
+            }
+        });
+        staffCreateAccount.onCreateClick(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                //TODO: implement staff account creation functionality
+            }
+        });
         
      base.close();   
         
