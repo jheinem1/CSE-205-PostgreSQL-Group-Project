@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e7d3211a-169f-410d-8b55-b0afda4c4f35" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ItemHolder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ItemHolder.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -84,14 +83,7 @@
       <workItem from="1619374360858" duration="7379000" />
       <workItem from="1619394970834" duration="17656000" />
       <workItem from="1619493382884" duration="357000" />
-      <workItem from="1619493757591" duration="8160000" />
-    </task>
-    <task id="LOCAL-00004" summary="specified exit on close">
-      <created>1619338104773</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1619338104773</updated>
+      <workItem from="1619493757591" duration="8253000" />
     </task>
     <task id="LOCAL-00005" summary="Removed duplicate files">
       <created>1619374623876</created>
@@ -429,7 +421,14 @@
       <option name="project" value="LOCAL" />
       <updated>1619500239499</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="Added array constructor">
+      <created>1619502009061</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1619502009061</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -448,7 +447,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Implemented additional cart-related methods" />
     <MESSAGE value="Added some basic handling for staffCreateAccount" />
     <MESSAGE value="Cleaned up code" />
     <MESSAGE value="Commented out 'actionPreformed' method" />
@@ -473,6 +471,7 @@
     <MESSAGE value="Uncommented checkout methods" />
     <MESSAGE value="Added 'encode' method to ShoppingCart so it works with Customer class again" />
     <MESSAGE value="Made item shipping quantity-sensitive" />
-    <option name="LAST_COMMIT_MESSAGE" value="Made item shipping quantity-sensitive" />
+    <MESSAGE value="Added array constructor" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added array constructor" />
   </component>
 </project>

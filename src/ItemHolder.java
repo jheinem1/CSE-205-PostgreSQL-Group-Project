@@ -16,8 +16,7 @@ public abstract class ItemHolder {
 
     public ItemHolder(Item[] items) {
         itemMap = new HashMap<String, String>();
-        for (var item : items)
-            addItem(item);
+        addItems(items);
     }
 
     public ItemHolder clear() {
